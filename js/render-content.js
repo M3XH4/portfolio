@@ -18,21 +18,26 @@ function renderFeaturedProjects(projects) {
   if (!container) return;
 
   const featuredProjects = projects.filter(project => project.featured).slice(0, 6);
-  container.innerHTML = featuredProjects.map((project, index) => projectCard(project, {
+  container.innerHTML = renderProjectCards(featuredProjects, {
     variant: 'featured',
-    delay: index % 3,
     wrapper: false
-  })).join('');
+  });
 }
 
 function renderProjectArchive(projects) {
   const container = document.querySelector('[data-render="projects-gallery"]');
   if (!container) return;
 
-  container.innerHTML = projects.map((project, index) => projectCard(project, {
+  container.innerHTML = renderProjectCards(projects, {
     variant: 'archive',
-    delay: index % 3,
     wrapper: true
+  });
+}
+
+function renderProjectCards(projects, options = {}) {
+  return (projects || []).map((project, index) => projectCard(project, {
+    ...options,
+    delay: index % 3
   })).join('');
 }
 
@@ -193,3 +198,5 @@ function escapeHtml(value) {
 function escapeAttr(value) {
   return escapeHtml(value).replace(/`/g, '&#096;');
 }
+
+window.renderProjectCards = renderProjectCards;

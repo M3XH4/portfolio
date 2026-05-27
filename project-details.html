@@ -7,7 +7,7 @@
   <!-- SEO Meta Tags -->
   <title>Case Study Details | Professional Developer Portfolio</title>
   <meta name="description" content="Detailed engineering walkthrough of software designs, challenges, and implementation methodologies.">
-  
+  <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
   <!-- Preconnect Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,21 +33,31 @@
     
     .details-grid {
       display: grid;
-      grid-template-columns: 1.8fr 1.2fr;
-      gap: var(--space-2xl);
+      grid-template-columns: minmax(0, 1.8fr) minmax(280px, 1.2fr);
+      gap: var(--space-xl);
       margin-top: var(--space-2xl);
+      align-items: start;
+    }
+
+    .details-grid-no-gallery {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .details-grid-no-gallery .details-left-column {
+      display: none;
     }
     
     .details-section-title {
-      font-size: 1.5rem;
+      font-size: 1.35rem;
       border-bottom: 1px solid var(--border-color);
       padding-bottom: var(--space-xs);
-      margin-bottom: var(--space-md);
+      margin-bottom: var(--space-xs);
       color: var(--text-primary);
     }
     
     .details-card {
-      margin-bottom: var(--space-xl);
+      padding: 0;
+      margin-bottom: var(--space-md);
     }
     
     .details-nav {
@@ -92,6 +102,12 @@
       color: var(--text-secondary);
     }
 
+    .details-category {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
     .detail-hero-image-card {
       padding: 0;
       overflow: hidden;
@@ -108,7 +124,15 @@
     }
 
     .details-side-card {
-      margin-bottom: var(--space-lg);
+      margin-bottom: var(--space-md);
+    }
+
+    .details-side-title {
+      font-size: 1.1rem;
+      margin-bottom: var(--space-md);
+      color: var(--text-primary);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: var(--space-xs);
     }
 
     .details-spec-list,
@@ -146,22 +170,192 @@
       color: var(--text-secondary);
     }
 
+    .details-main-column p,
+    .details-main-column li {
+      line-height: 1.65;
+    }
+
+    .details-architecture-visual {
+      margin-top: var(--space-md);
+      background-color: var(--bg-secondary);
+      border: 1px dashed var(--border-color);
+      padding: var(--space-md);
+      border-radius: var(--radius-sm);
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      overflow-x: auto;
+    }
+
     .details-screenshot-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 320px));
       gap: var(--space-md);
+      justify-content: start;
+    }
+
+    .details-gallery {
+      margin-top: var(--space-xl);
+      padding: 0;
+    }
+
+    .details-link-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+
+    .details-link-actions .btn {
+      flex: 1 1 10rem;
+      justify-content: center;
     }
 
     .details-screenshot-card {
       padding: 0;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      background: var(--bg-card);
+      cursor: pointer;
+      overflow: hidden;
+      transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+    }
+
+    .details-screenshot-card:hover,
+    .details-screenshot-card:focus-visible {
+      transform: translateY(-3px);
+      border-color: var(--accent-primary);
+      box-shadow: var(--shadow-md);
     }
 
     .details-screenshot {
       display: block;
       width: 100%;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 16 / 10;
       object-fit: cover;
       background: #0b0f19;
+    }
+
+    .project-not-found {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .project-not-found h1 {
+      margin-top: var(--space-md);
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    .project-gallery-modal[hidden] {
+      display: none;
+    }
+
+    .project-gallery-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: grid;
+      place-items: center;
+      padding: var(--space-lg);
+    }
+
+    .project-gallery-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(2, 6, 23, 0.78);
+      backdrop-filter: blur(10px);
+    }
+
+    .project-gallery-dialog {
+      position: relative;
+      z-index: 1;
+      width: min(1040px, 100%);
+      max-height: 92vh;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color-hover);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+
+    .project-gallery-dialog figure {
+      margin: 0;
+    }
+
+    .project-gallery-dialog img {
+      display: block;
+      width: 100%;
+      max-height: 76vh;
+      object-fit: contain;
+      background: #0b0f19;
+    }
+
+    .project-gallery-dialog figcaption {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2xs);
+      padding: var(--space-md);
+      color: var(--text-secondary);
+    }
+
+    .project-gallery-dialog figcaption strong {
+      color: var(--text-primary);
+    }
+
+    .project-gallery-close,
+    .project-gallery-nav {
+      position: absolute;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      color: var(--text-primary);
+      transition: transform var(--transition-base), border-color var(--transition-base), color var(--transition-base);
+    }
+
+    .project-gallery-close:hover,
+    .project-gallery-close:focus-visible,
+    .project-gallery-nav:hover,
+    .project-gallery-nav:focus-visible {
+      transform: translateY(-1px);
+      border-color: var(--accent-primary);
+      color: var(--accent-primary);
+    }
+
+    .project-gallery-close {
+      top: var(--space-sm);
+      right: var(--space-sm);
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .project-gallery-nav {
+      top: 50%;
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+
+    .project-gallery-nav:hover,
+    .project-gallery-nav:focus-visible {
+      transform: translateY(calc(-50% - 1px));
+    }
+
+    .project-gallery-prev {
+      left: var(--space-md);
+    }
+
+    .project-gallery-next {
+      right: var(--space-md);
     }
     
     @media (max-width: 768px) {
@@ -173,6 +367,21 @@
       .details-nav .btn,
       .details-hero-actions .btn {
         flex: 1 1 10rem;
+      }
+
+      .project-gallery-modal {
+        padding: var(--space-sm);
+      }
+
+      .project-gallery-nav {
+        bottom: var(--space-md);
+        top: auto;
+        transform: none;
+      }
+
+      .project-gallery-nav:hover,
+      .project-gallery-nav:focus-visible {
+        transform: translateY(-1px);
       }
     }
   </style>
@@ -193,7 +402,7 @@
           <polyline points="16 18 22 12 16 6"></polyline>
           <polyline points="8 6 2 12 8 18"></polyline>
         </svg>
-        <span>DEV//PORTFOLIO</span>
+        <span>DEV//SEAN</span>
       </a>
 
       <!-- Desktop Navigation Menu -->
@@ -379,251 +588,13 @@
     </div>
   </footer>
 
-  <!-- Local project detail data and router -->
-  <script>
-    const PROJECTS_DATABASE = {
-      'pawlse-system': {
-        title: 'PAWLSE: An AI Assisted Animal Welfare and Engagement Management System',
-        subtitle: 'A full-stack animal welfare platform for rescue coordination, adoption workflows, volunteer management, and community engagement.',
-        category: 'Full Stack',
-        status: 'In Progress',
-        statusClass: 'badge-progress',
-        timeline: '2026',
-        tech: ['React', 'Laravel', 'TailwindCSS', 'TypeScript', 'Inertia.js', 'MySQL'],
-        overview: 'PAWLSE centralizes animal welfare workflows into a practical digital system for reporting, adoption, volunteers, donations, and operational oversight.',
-        problem: 'Animal welfare organizations often manage rescue reports, adoption records, donations, and volunteers across disconnected tools.',
-        solution: 'The system provides role-based management flows, structured reporting, and a centralized dashboard for welfare operations.',
-        solutionBullets: ['Rescue report tracking', 'Adoption management', 'Volunteer coordination', 'Donation transparency'],
-        architecture: 'React and Inertia power the interface while Laravel handles application logic, authentication, and database workflows.',
-        architectureVisual: '[React/Inertia UI] -> [Laravel API] -> [MySQL Database]',
-        challenges: 'Coordinating many operational roles while keeping the user interface understandable.',
-        learnings: 'Practical systems need clear permissions, audit-friendly workflows, and simple dashboards.',
-        github: 'https://github.com/M3XH4/pawlse/',
-        demo: '#',
-        prev: 'inventory-system',
-        next: 'invyte-system',
-        graphic: '<img src="assets/images/projects/pawlse-cover.png" alt="PAWLSE project preview" style="display:block;width:100%;height:100%;object-fit:cover;">'
-      },
-      'invyte-system': {
-        title: 'Invyte: AN RSVP & Event Management System',
-        subtitle: 'A mobile-first RSVP and event management system with QR invitations, guest tracking, analytics, and real-time workflows.',
-        category: 'Android/Mobile',
-        status: 'Completed',
-        statusClass: 'badge-completed',
-        timeline: '2026',
-        tech: ['React Native', 'React', 'Laravel', 'PostgreSQL', 'TailwindCSS'],
-        overview: 'Invyte helps event organizers manage invitations, RSVPs, guest attendance, and event analytics in one workflow.',
-        problem: 'Event coordination becomes difficult when RSVPs, attendance, and guest communication are scattered across different tools.',
-        solution: 'Invyte combines QR-based invitations, guest flows, attendance tracking, and dashboards into one event management experience.',
-        solutionBullets: ['QR invitation flow', 'Guest RSVP management', 'Attendance tracking', 'Analytics dashboard'],
-        architecture: 'Mobile and web clients communicate with a Laravel backend and PostgreSQL database.',
-        architectureVisual: '[Mobile/Web Client] -> [Laravel Backend] -> [PostgreSQL]',
-        challenges: 'Keeping the RSVP flow quick while supporting organizer-level event controls.',
-        learnings: 'Mobile-first event tools need fast guest flows and clean organizer dashboards.',
-        github: 'https://github.com/M3XH4/invyte/',
-        demo: '#',
-        prev: 'pawlse-system',
-        next: 'cinplex-system',
-        graphic: '<img src="assets/images/projects/invyte-cover.png" alt="Invyte project preview" style="display:block;width:100%;height:100%;object-fit:cover;">'
-      },
-      'cinplex-system': {
-        title: 'Cineplex: Cinema Management System',
-        subtitle: 'A cinema management and movie recommendation web system with booking, seat selection, and admin analytics.',
-        category: 'Full Stack',
-        status: 'Completed',
-        statusClass: 'badge-completed',
-        timeline: '2026',
-        tech: ['MongoDB', 'Express.js', 'React', 'Node.js'],
-        overview: 'Cineplex supports movie browsing, showtime management, booking flows, seat selection, and cinema operations.',
-        problem: 'Cinema platforms need a clear customer booking flow and a separate operational workflow for managing movies and showtimes.',
-        solution: 'The system combines a customer-facing movie interface with backend management tools for cinema operations.',
-        solutionBullets: ['Movie browsing', 'Seat selection', 'Booking management', 'Admin analytics'],
-        architecture: 'A MERN stack application connects customer and admin interfaces through API-driven booking workflows.',
-        architectureVisual: '[React Client] -> [Express API] -> [MongoDB]',
-        challenges: 'Keeping booking state clear while supporting admin management features.',
-        learnings: 'Booking systems need careful data modeling around rooms, showtimes, seats, and reservations.',
-        github: 'https://github.com/M3XH4/cineplex/',
-        demo: '#',
-        prev: 'invyte-system',
-        next: 'chat-portal',
-        graphic: '<img src="assets/images/projects/cineplex-cover.png" alt="Cineplex project preview" style="display:block;width:100%;height:100%;object-fit:cover;">'
-      },
-      'chat-portal': {
-        title: 'Realtime Chat Portal',
-        subtitle: 'A browser-based messaging portal with room workflows, WebSocket events, and responsive conversation layouts.',
-        category: 'Full Stack',
-        status: 'Case Study',
-        statusClass: 'badge-case-study',
-        timeline: '2024',
-        tech: ['JavaScript', 'WebSockets', 'Node.js'],
-        overview: 'A lightweight communication interface for realtime team conversations without heavy frontend framework overhead.',
-        problem: 'The project needed fast message delivery, clear mobile layouts, and reliable room state.',
-        solution: 'The client uses vanilla JavaScript and a compact WebSocket service for realtime events.',
-        solutionBullets: ['Responsive message layouts', 'Room state handling', 'Reconnect feedback'],
-        architecture: 'Browser clients connect through WebSockets to room broadcast handlers and metadata storage.',
-        architectureVisual: '[Browser Client] -> [WebSocket Server] -> [Room Broadcast]',
-        challenges: 'Keeping UI state synchronized with connection state.',
-        learnings: 'Realtime interfaces benefit from clear loading, empty, and reconnect states.',
-        github: 'https://github.com',
-        demo: '#',
-        prev: 'cinplex-system',
-        next: 'compiler',
-        graphic: '<img src="assets/images/projects/project-web.svg" alt="Realtime chat portal preview" style="display:block;width:100%;height:100%;object-fit:cover;">'
-      },
-      'compiler': {
-        title: 'Toy Compiler in C',
-        subtitle: 'A parser and AST compiler experiment for learning lower-level language tooling.',
-        category: 'System',
-        status: 'Experimental',
-        statusClass: 'badge-experimental',
-        timeline: '2023',
-        tech: ['C', 'Assembly', 'Linux'],
-        overview: 'A learning project focused on lexing, parsing, AST construction, and assembly output.',
-        problem: 'Understanding compiler behavior requires working below high-level application abstractions.',
-        solution: 'The project implements a scanner, parser, symbol handling, and basic code generation.',
-        solutionBullets: ['Lexer implementation', 'Recursive parser', 'AST output', 'Assembly generation'],
-        architecture: 'Source files are scanned into tokens, parsed into AST nodes, and translated toward assembly output.',
-        architectureVisual: '[Source] -> [Lexer] -> [Parser] -> [AST] -> [Assembly]',
-        challenges: 'Managing memory and diagnostics in C.',
-        learnings: 'Compiler architecture builds stronger instincts for language tooling and runtime behavior.',
-        github: 'https://github.com',
-        demo: '#',
-        prev: 'chat-portal',
-        next: 'design-system',
-        graphic: '<img src="assets/images/projects/project-experimental.svg" alt="Compiler project preview" style="display:block;width:100%;height:100%;object-fit:cover;">'
-      },
-      'design-system': {
-        title: 'Design System Kit',
-        subtitle: 'A reusable interface kit with layout patterns, component tokens, and responsive portfolio-ready UI blocks.',
-        category: 'UI/UX',
-        status: 'Completed',
-        statusClass: 'badge-completed',
-        timeline: '2024',
-        tech: ['Figma', 'CSS', 'Design Tokens'],
-        overview: 'A practical UI system for keeping portfolio and product pages visually consistent.',
-        problem: 'Screens drift visually when cards, buttons, badges, and spacing are rebuilt differently each time.',
-        solution: 'The kit defines shared tokens and reusable UI patterns.',
-        solutionBullets: ['Color tokens', 'Reusable cards', 'Responsive spacing', 'Shared badges'],
-        architecture: 'Tokens feed shared CSS components that pages compose into sections and cards.',
-        architectureVisual: '[Design Tokens] -> [Shared CSS Components] -> [Page Sections]',
-        challenges: 'Keeping components flexible without losing consistency.',
-        learnings: 'Small UI systems make projects easier to extend.',
-        github: 'https://github.com',
-        demo: '#',
-        prev: 'compiler',
-        next: 'task-planner',
-        graphic: '<img src="assets/images/projects/project-web.svg" alt="Design system project preview" style="display:block;width:100%;height:100%;object-fit:cover;">'
-      },
-      'task-planner': {
-        title: 'Task Planner App',
-        subtitle: 'A native planning app with local scheduling, calendar views, and offline-first task persistence.',
-        category: 'Android/Mobile',
-        status: 'In Progress',
-        statusClass: 'badge-progress',
-        timeline: '2024 - Present',
-        tech: ['Kotlin', 'SQLite', 'Compose'],
-        overview: 'Task Planner is a native Android workflow app for scheduling tasks and keeping plans available offline.',
-        problem: 'The app needs dependable reminders and clear calendar interaction without constant network access.',
-        solution: 'The implementation uses native scheduling, local persistence, and compact mobile UI patterns.',
-        solutionBullets: ['Task creation', 'Local persistence', 'Calendar views'],
-        architecture: 'Compose screens communicate with a ViewModel and local repository.',
-        architectureVisual: '[Compose Screens] -> [ViewModel] -> [SQLite Storage]',
-        challenges: 'Balancing reminder reliability with battery-conscious behavior.',
-        learnings: 'Mobile planning tools need predictable local storage and careful lifecycle handling.',
-        github: 'https://github.com',
-        demo: '#',
-        prev: 'design-system',
-        next: 'inventory-system',
-        graphic: '<img src="assets/images/projects/project-mobile.svg" alt="Task planner app preview" style="display:block;width:100%;height:100%;object-fit:cover;">'
-      },
-      'inventory-system': {
-        title: 'Inventory Operations System',
-        subtitle: 'A practical operations system for stock tracking, supplier workflows, and lightweight reporting.',
-        category: 'System',
-        status: 'In Progress',
-        statusClass: 'badge-progress',
-        timeline: '2024 - Present',
-        tech: ['Node.js', 'MySQL', 'REST API'],
-        overview: 'A practical system for clearer stock movement, supplier records, and reporting workflows.',
-        problem: 'Manual inventory tracking creates duplicated records and limited operational visibility.',
-        solution: 'The system uses a clean web interface backed by API endpoints and relational data modeling.',
-        solutionBullets: ['Stock tracking', 'Supplier records', 'Adjustment logs', 'Reports'],
-        architecture: 'The browser UI communicates with a Node.js API backed by MySQL.',
-        architectureVisual: '[Browser UI] -> [Node.js REST API] -> [MySQL]',
-        challenges: 'Keeping inventory adjustments auditable while making common updates quick.',
-        learnings: 'Operational tools work best when the interface mirrors the real workflow.',
-        github: 'https://github.com',
-        demo: '#',
-        prev: 'task-planner',
-        next: 'pawlse-system',
-        graphic: '<img src="assets/images/projects/project-backend.svg" alt="Inventory system preview" style="display:block;width:100%;height:100%;object-fit:cover;">'
-      }
-    };
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const params = new URLSearchParams(window.location.search);
-      const projectId = params.get('id') || 'pawlse-system';
-      const project = PROJECTS_DATABASE[projectId];
-
-      if (!project) {
-        document.getElementById('mainContainer').innerHTML = `
-          <div class="container" style="padding: 100px 0; text-align: center;">
-            <h2>Case Study Not Found</h2>
-            <p style="margin-bottom: var(--space-xl);">The requested case study id does not exist in the archive database.</p>
-            <a href="projects.html" class="btn btn-primary">Return to Projects</a>
-          </div>
-        `;
-        return;
-      }
-
-      document.title = `${project.title} | Case Study Walkthrough`;
-      const statusBadge = document.getElementById('detailStatus');
-      statusBadge.innerText = project.status;
-      statusBadge.className = `badge ${project.statusClass}`;
-
-      document.getElementById('detailCategory').innerText = project.category;
-      document.getElementById('detailTitle').innerText = project.title;
-      document.getElementById('detailSubtitle').innerText = project.subtitle;
-      document.getElementById('detailOverview').innerText = project.overview;
-      document.getElementById('detailProblem').innerText = project.problem;
-      document.getElementById('detailSolution').innerText = project.solution;
-      document.getElementById('detailArchitecture').innerText = project.architecture;
-      document.getElementById('detailChallengeDesc').innerText = project.challenges;
-      document.getElementById('detailLearnings').innerText = project.learnings;
-      document.getElementById('detailTimeline').innerText = project.timeline;
-      document.getElementById('detailGraphicContainer').innerHTML = project.graphic;
-      document.getElementById('detailArchitectureVisual').innerText = project.architectureVisual;
-      document.getElementById('detailGitLink').setAttribute('href', project.github);
-      document.getElementById('detailDemoLink').setAttribute('href', project.demo);
-
-      const solList = document.getElementById('detailSolutionList');
-      solList.innerHTML = '<ul style="display: flex; flex-direction: column; gap: var(--space-xs); margin-top: var(--space-md); margin-bottom: var(--space-lg); padding-left: 20px; list-style: disc;"></ul>';
-      const ulEl = solList.querySelector('ul');
-      project.solutionBullets.forEach((bullet) => {
-        const liEl = document.createElement('li');
-        liEl.innerText = bullet;
-        liEl.style.color = 'var(--text-secondary)';
-        ulEl.appendChild(liEl);
-      });
-
-      const techContainer = document.getElementById('detailTech');
-      techContainer.innerHTML = '';
-      project.tech.forEach((tech) => {
-        const chip = document.createElement('span');
-        chip.className = 'tech-tag';
-        chip.innerText = tech;
-        techContainer.appendChild(chip);
-      });
-
-      document.getElementById('prevProjectBtn').setAttribute('href', `project-details.html?id=${project.prev}`);
-      document.getElementById('nextProjectBtn').setAttribute('href', `project-details.html?id=${project.next}`);
-    });
-  </script>
-
   <!-- Application Modules -->
   <script src="js/theme.js"></script>
   <script src="js/navigation.js"></script>
+  <script src="js/portfolio-data.js"></script>
+  <script src="js/project-details.js"></script>
   <script src="js/animations.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
+
