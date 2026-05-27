@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Case Study Details | Professional Developer Portfolio</title>
+  <meta name="description" content="Detailed engineering walkthrough of software designs, challenges, and implementation methodologies.">
+  
+  <!-- Preconnect Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- Application Styles -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  
+  <style>
+    /* Premium Detail Layout specific rules */
+    .details-hero {
+      padding: var(--space-3xl) 0 var(--space-xl) 0;
+      border-bottom: 1px solid var(--border-color);
+      background-color: var(--bg-secondary);
+    }
+    
+    .details-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1.2fr;
+      gap: var(--space-2xl);
+      margin-top: var(--space-2xl);
+    }
+    
+    .details-section-title {
+      font-size: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: var(--space-xs);
+      margin-bottom: var(--space-md);
+      color: var(--text-primary);
+    }
+    
+    .details-card {
+      margin-bottom: var(--space-xl);
+    }
+    
+    .details-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+      margin-top: var(--space-3xl);
+      padding-top: var(--space-xl);
+      border-top: 1px solid var(--border-color);
+    }
+
+    .details-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2xs);
+      margin-bottom: var(--space-md);
+      color: var(--accent-primary);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .details-meta,
+    .details-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      align-items: center;
+      margin-bottom: var(--space-sm);
+    }
+
+    .details-hero-actions {
+      margin-top: var(--space-lg);
+      margin-bottom: 0;
+    }
+
+    .details-lead {
+      max-width: 760px;
+      font-size: clamp(1rem, 1.6vw, 1.18rem);
+      color: var(--text-secondary);
+    }
+
+    .detail-hero-image-card {
+      padding: 0;
+      overflow: hidden;
+      border-color: var(--border-color-hover);
+      margin-bottom: var(--space-xl);
+    }
+
+    .detail-hero-image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: #0b0f19;
+    }
+
+    .details-side-card {
+      margin-bottom: var(--space-lg);
+    }
+
+    .details-spec-list,
+    .details-tech-group {
+      display: grid;
+      gap: var(--space-md);
+    }
+
+    .details-spec-list span {
+      display: block;
+      margin-bottom: var(--space-2xs);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .details-tech-group {
+      gap: var(--space-xs);
+      margin-bottom: var(--space-md);
+    }
+
+    .details-tech-group h3 {
+      color: var(--accent-primary);
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .details-list {
+      display: grid;
+      gap: var(--space-xs);
+      padding-left: 1.2rem;
+      color: var(--text-secondary);
+    }
+
+    .details-screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+      gap: var(--space-md);
+    }
+
+    .details-screenshot-card {
+      padding: 0;
+    }
+
+    .details-screenshot {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: #0b0f19;
+    }
+    
+    @media (max-width: 768px) {
+      .details-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+      }
+
+      .details-nav .btn,
+      .details-hero-actions .btn {
+        flex: 1 1 10rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Decorative Glowing Blobs -->
+  <div class="blur-glow-container" aria-hidden="true">
+    <div class="blur-glow blur-glow-1 float-bg-1"></div>
+    <div class="blur-glow blur-glow-2 float-bg-2"></div>
+  </div>
+
+  <!-- Header Section -->
+  <header id="siteHeader" class="scrolled">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo" aria-label="Developer Portfolio Home">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+        <span>DEV//PORTFOLIO</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+          <li><a href="index.html#services" class="nav-link">Services</a></li>
+          <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="certificates.html" class="nav-link">Certificates</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Theme Switcher and Hamburger for Mobile -->
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggler" type="button" aria-label="Switch to light theme">
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="4.22" x2="19.78" y2="5.64"></line>
+          </svg>
+          <span class="theme-toggle-text">Dark</span>
+        </button>
+
+        <button class="hamburger" type="button" aria-label="Toggle Mobile Menu" aria-expanded="false" aria-controls="mobileNavbar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay Navigation -->
+  <nav class="mobile-nav" id="mobileNavbar" aria-label="Mobile Navigation" aria-hidden="true">
+    <a href="index.html#projects" class="nav-link">Projects</a>
+    <a href="index.html#services" class="nav-link">Services</a>
+    <a href="index.html#skills" class="nav-link">Skills</a>
+    <a href="index.html#about" class="nav-link">About</a>
+    <a href="certificates.html" class="nav-link">Certificates</a>
+    <a href="index.html#contact" class="nav-link">Contact</a>
+  </nav>
+
+  <!-- Case Study Dynamic Content -->
+  <main id="mainContainer">
+    
+    <!-- Hero Header Details -->
+    <section class="details-hero">
+      <div class="container">
+        <a href="projects.html" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-primary); display: inline-flex; align-items: center; gap: 4px; margin-bottom: var(--space-md);">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Back to Projects
+        </a>
+        <div style="display: flex; gap: var(--space-sm); align-items: center; margin-bottom: var(--space-sm);">
+          <span class="badge badge-completed" id="detailStatus">Completed</span>
+          <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);" id="detailCategory">Web App</span>
+        </div>
+        <h1 id="detailTitle" style="margin-bottom: var(--space-sm);">Case Study</h1>
+        <p id="detailSubtitle" style="font-size: 1.15rem; color: var(--text-secondary); max-width: 700px;"></p>
+      </div>
+    </section>
+
+    <!-- Case Study Body -->
+    <section>
+      <div class="container">
+        
+        <!-- Large Architectural Visual Block -->
+        <div class="card" style="padding: 0; width: 100%; border-radius: var(--radius-md); overflow: hidden; margin-bottom: var(--space-xl); border-color: var(--border-color-hover);" id="detailGraphicContainer">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="details-grid">
+          <!-- Left Column (Core technical writeup) -->
+          <div>
+            <!-- Overview -->
+            <div class="details-card">
+              <h2 class="details-section-title">Project Overview</h2>
+              <p id="detailOverview" style="margin-bottom: var(--space-md);"></p>
+            </div>
+
+            <!-- Problem Statement -->
+            <div class="details-card">
+              <h2 class="details-section-title">The Challenge</h2>
+              <p id="detailProblem"></p>
+            </div>
+
+            <!-- Solution -->
+            <div class="details-card">
+              <h2 class="details-section-title">The Solution &amp; Implementation</h2>
+              <p id="detailSolution" style="margin-bottom: var(--space-md);"></p>
+              <div id="detailSolutionList">
+                <!-- Solutions bullet points -->
+              </div>
+            </div>
+
+            <!-- Architectural details -->
+            <div class="details-card">
+              <h2 class="details-section-title">System Architecture</h2>
+              <p id="detailArchitecture" style="margin-bottom: var(--space-md);"></p>
+              <div id="detailArchitectureVisual" style="background-color: var(--bg-secondary); border: 1px dashed var(--border-color); padding: var(--space-md); border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 0.85rem;">
+                <!-- ASCII representation or custom items -->
+              </div>
+            </div>
+
+            <!-- Challenges faced -->
+            <div class="details-card">
+              <h2 class="details-section-title">Engineering Challenges</h2>
+              <p id="detailChallengeDesc"></p>
+            </div>
+
+            <!-- Key Learnings -->
+            <div class="details-card">
+              <h2 class="details-section-title">Key Learnings &amp; Takeaways</h2>
+              <p id="detailLearnings"></p>
+            </div>
+          </div>
+
+          <!-- Right Column (Tech stack side panel & details specs) -->
+          <div>
+            <!-- Tech Specs Card -->
+            <div class="card" style="margin-bottom: var(--space-lg);">
+              <h3 style="font-size: 1.1rem; margin-bottom: var(--space-md); color: var(--text-primary); border-bottom: 1px solid var(--border-color); padding-bottom: var(--space-xs);">Project Specifications</h3>
+              
+              <div style="display: flex; flex-direction: column; gap: var(--space-md);">
+                <div>
+                  <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Primary Stack</div>
+                  <div class="project-tech" id="detailTech" style="margin-top: 6px; margin-bottom: 0;">
+                    <!-- Tech tags populated by JS -->
+                  </div>
+                </div>
+
+                <div>
+                  <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Timeline</div>
+                  <div style="font-weight: 500; margin-top: 2px;" id="detailTimeline"></div>
+                </div>
+
+                <div>
+                  <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Codebase &amp; Links</div>
+                  <div style="display: flex; gap: var(--space-sm); margin-top: var(--space-xs);">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="flex: 1; padding: 0.5rem;" id="detailGitLink">GitHub Code</a>
+                    <a href="#" class="btn btn-primary" style="flex: 1; padding: 0.5rem;" id="detailDemoLink">Live Demo</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Next / Prev Case study navigation links -->
+        <div class="details-nav">
+          <a href="#" class="btn btn-outline" id="prevProjectBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Previous Case Study
+          </a>
+          <a href="#" class="btn btn-outline" id="nextProjectBtn">
+            Next Case Study
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="siteFooter">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Developer Portfolio. All rights reserved.</p>
+        <p><a href="projects.html">Projects</a> · <a href="certificates.html">Certificates</a> · Built with HTML5, CSS3, &amp; Vanilla JS.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Local project detail data and router -->
+  <script>
+    const PROJECTS_DATABASE = {
+      'pawlse-system': {
+        title: 'PAWLSE: An AI Assisted Animal Welfare and Engagement Management System',
+        subtitle: 'A full-stack animal welfare platform for rescue coordination, adoption workflows, volunteer management, and community engagement.',
+        category: 'Full Stack',
+        status: 'In Progress',
+        statusClass: 'badge-progress',
+        timeline: '2026',
+        tech: ['React', 'Laravel', 'TailwindCSS', 'TypeScript', 'Inertia.js', 'MySQL'],
+        overview: 'PAWLSE centralizes animal welfare workflows into a practical digital system for reporting, adoption, volunteers, donations, and operational oversight.',
+        problem: 'Animal welfare organizations often manage rescue reports, adoption records, donations, and volunteers across disconnected tools.',
+        solution: 'The system provides role-based management flows, structured reporting, and a centralized dashboard for welfare operations.',
+        solutionBullets: ['Rescue report tracking', 'Adoption management', 'Volunteer coordination', 'Donation transparency'],
+        architecture: 'React and Inertia power the interface while Laravel handles application logic, authentication, and database workflows.',
+        architectureVisual: '[React/Inertia UI] -> [Laravel API] -> [MySQL Database]',
+        challenges: 'Coordinating many operational roles while keeping the user interface understandable.',
+        learnings: 'Practical systems need clear permissions, audit-friendly workflows, and simple dashboards.',
+        github: 'https://github.com/M3XH4/pawlse/',
+        demo: '#',
+        prev: 'inventory-system',
+        next: 'invyte-system',
+        graphic: '<img src="assets/images/projects/pawlse-cover.png" alt="PAWLSE project preview" style="display:block;width:100%;height:100%;object-fit:cover;">'
+      },
+      'invyte-system': {
+        title: 'Invyte: AN RSVP & Event Management System',
+        subtitle: 'A mobile-first RSVP and event management system with QR invitations, guest tracking, analytics, and real-time workflows.',
+        category: 'Android/Mobile',
+        status: 'Completed',
+        statusClass: 'badge-completed',
+        timeline: '2026',
+        tech: ['React Native', 'React', 'Laravel', 'PostgreSQL', 'TailwindCSS'],
+        overview: 'Invyte helps event organizers manage invitations, RSVPs, guest attendance, and event analytics in one workflow.',
+        problem: 'Event coordination becomes difficult when RSVPs, attendance, and guest communication are scattered across different tools.',
+        solution: 'Invyte combines QR-based invitations, guest flows, attendance tracking, and dashboards into one event management experience.',
+        solutionBullets: ['QR invitation flow', 'Guest RSVP management', 'Attendance tracking', 'Analytics dashboard'],
+        architecture: 'Mobile and web clients communicate with a Laravel backend and PostgreSQL database.',
+        architectureVisual: '[Mobile/Web Client] -> [Laravel Backend] -> [PostgreSQL]',
+        challenges: 'Keeping the RSVP flow quick while supporting organizer-level event controls.',
+        learnings: 'Mobile-first event tools need fast guest flows and clean organizer dashboards.',
+        github: 'https://github.com/M3XH4/invyte/',
+        demo: '#',
+        prev: 'pawlse-system',
+        next: 'cinplex-system',
+        graphic: '<img src="assets/images/projects/invyte-cover.png" alt="Invyte project preview" style="display:block;width:100%;height:100%;object-fit:cover;">'
+      },
+      'cinplex-system': {
+        title: 'Cineplex: Cinema Management System',
+        subtitle: 'A cinema management and movie recommendation web system with booking, seat selection, and admin analytics.',
+        category: 'Full Stack',
+        status: 'Completed',
+        statusClass: 'badge-completed',
+        timeline: '2026',
+        tech: ['MongoDB', 'Express.js', 'React', 'Node.js'],
+        overview: 'Cineplex supports movie browsing, showtime management, booking flows, seat selection, and cinema operations.',
+        problem: 'Cinema platforms need a clear customer booking flow and a separate operational workflow for managing movies and showtimes.',
+        solution: 'The system combines a customer-facing movie interface with backend management tools for cinema operations.',
+        solutionBullets: ['Movie browsing', 'Seat selection', 'Booking management', 'Admin analytics'],
+        architecture: 'A MERN stack application connects customer and admin interfaces through API-driven booking workflows.',
+        architectureVisual: '[React Client] -> [Express API] -> [MongoDB]',
+        challenges: 'Keeping booking state clear while supporting admin management features.',
+        learnings: 'Booking systems need careful data modeling around rooms, showtimes, seats, and reservations.',
+        github: 'https://github.com/M3XH4/cineplex/',
+        demo: '#',
+        prev: 'invyte-system',
+        next: 'chat-portal',
+        graphic: '<img src="assets/images/projects/cineplex-cover.png" alt="Cineplex project preview" style="display:block;width:100%;height:100%;object-fit:cover;">'
+      },
+      'chat-portal': {
+        title: 'Realtime Chat Portal',
+        subtitle: 'A browser-based messaging portal with room workflows, WebSocket events, and responsive conversation layouts.',
+        category: 'Full Stack',
+        status: 'Case Study',
+        statusClass: 'badge-case-study',
+        timeline: '2024',
+        tech: ['JavaScript', 'WebSockets', 'Node.js'],
+        overview: 'A lightweight communication interface for realtime team conversations without heavy frontend framework overhead.',
+        problem: 'The project needed fast message delivery, clear mobile layouts, and reliable room state.',
+        solution: 'The client uses vanilla JavaScript and a compact WebSocket service for realtime events.',
+        solutionBullets: ['Responsive message layouts', 'Room state handling', 'Reconnect feedback'],
+        architecture: 'Browser clients connect through WebSockets to room broadcast handlers and metadata storage.',
+        architectureVisual: '[Browser Client] -> [WebSocket Server] -> [Room Broadcast]',
+        challenges: 'Keeping UI state synchronized with connection state.',
+        learnings: 'Realtime interfaces benefit from clear loading, empty, and reconnect states.',
+        github: 'https://github.com',
+        demo: '#',
+        prev: 'cinplex-system',
+        next: 'compiler',
+        graphic: '<img src="assets/images/projects/project-web.svg" alt="Realtime chat portal preview" style="display:block;width:100%;height:100%;object-fit:cover;">'
+      },
+      'compiler': {
+        title: 'Toy Compiler in C',
+        subtitle: 'A parser and AST compiler experiment for learning lower-level language tooling.',
+        category: 'System',
+        status: 'Experimental',
+        statusClass: 'badge-experimental',
+        timeline: '2023',
+        tech: ['C', 'Assembly', 'Linux'],
+        overview: 'A learning project focused on lexing, parsing, AST construction, and assembly output.',
+        problem: 'Understanding compiler behavior requires working below high-level application abstractions.',
+        solution: 'The project implements a scanner, parser, symbol handling, and basic code generation.',
+        solutionBullets: ['Lexer implementation', 'Recursive parser', 'AST output', 'Assembly generation'],
+        architecture: 'Source files are scanned into tokens, parsed into AST nodes, and translated toward assembly output.',
+        architectureVisual: '[Source] -> [Lexer] -> [Parser] -> [AST] -> [Assembly]',
+        challenges: 'Managing memory and diagnostics in C.',
+        learnings: 'Compiler architecture builds stronger instincts for language tooling and runtime behavior.',
+        github: 'https://github.com',
+        demo: '#',
+        prev: 'chat-portal',
+        next: 'design-system',
+        graphic: '<img src="assets/images/projects/project-experimental.svg" alt="Compiler project preview" style="display:block;width:100%;height:100%;object-fit:cover;">'
+      },
+      'design-system': {
+        title: 'Design System Kit',
+        subtitle: 'A reusable interface kit with layout patterns, component tokens, and responsive portfolio-ready UI blocks.',
+        category: 'UI/UX',
+        status: 'Completed',
+        statusClass: 'badge-completed',
+        timeline: '2024',
+        tech: ['Figma', 'CSS', 'Design Tokens'],
+        overview: 'A practical UI system for keeping portfolio and product pages visually consistent.',
+        problem: 'Screens drift visually when cards, buttons, badges, and spacing are rebuilt differently each time.',
+        solution: 'The kit defines shared tokens and reusable UI patterns.',
+        solutionBullets: ['Color tokens', 'Reusable cards', 'Responsive spacing', 'Shared badges'],
+        architecture: 'Tokens feed shared CSS components that pages compose into sections and cards.',
+        architectureVisual: '[Design Tokens] -> [Shared CSS Components] -> [Page Sections]',
+        challenges: 'Keeping components flexible without losing consistency.',
+        learnings: 'Small UI systems make projects easier to extend.',
+        github: 'https://github.com',
+        demo: '#',
+        prev: 'compiler',
+        next: 'task-planner',
+        graphic: '<img src="assets/images/projects/project-web.svg" alt="Design system project preview" style="display:block;width:100%;height:100%;object-fit:cover;">'
+      },
+      'task-planner': {
+        title: 'Task Planner App',
+        subtitle: 'A native planning app with local scheduling, calendar views, and offline-first task persistence.',
+        category: 'Android/Mobile',
+        status: 'In Progress',
+        statusClass: 'badge-progress',
+        timeline: '2024 - Present',
+        tech: ['Kotlin', 'SQLite', 'Compose'],
+        overview: 'Task Planner is a native Android workflow app for scheduling tasks and keeping plans available offline.',
+        problem: 'The app needs dependable reminders and clear calendar interaction without constant network access.',
+        solution: 'The implementation uses native scheduling, local persistence, and compact mobile UI patterns.',
+        solutionBullets: ['Task creation', 'Local persistence', 'Calendar views'],
+        architecture: 'Compose screens communicate with a ViewModel and local repository.',
+        architectureVisual: '[Compose Screens] -> [ViewModel] -> [SQLite Storage]',
+        challenges: 'Balancing reminder reliability with battery-conscious behavior.',
+        learnings: 'Mobile planning tools need predictable local storage and careful lifecycle handling.',
+        github: 'https://github.com',
+        demo: '#',
+        prev: 'design-system',
+        next: 'inventory-system',
+        graphic: '<img src="assets/images/projects/project-mobile.svg" alt="Task planner app preview" style="display:block;width:100%;height:100%;object-fit:cover;">'
+      },
+      'inventory-system': {
+        title: 'Inventory Operations System',
+        subtitle: 'A practical operations system for stock tracking, supplier workflows, and lightweight reporting.',
+        category: 'System',
+        status: 'In Progress',
+        statusClass: 'badge-progress',
+        timeline: '2024 - Present',
+        tech: ['Node.js', 'MySQL', 'REST API'],
+        overview: 'A practical system for clearer stock movement, supplier records, and reporting workflows.',
+        problem: 'Manual inventory tracking creates duplicated records and limited operational visibility.',
+        solution: 'The system uses a clean web interface backed by API endpoints and relational data modeling.',
+        solutionBullets: ['Stock tracking', 'Supplier records', 'Adjustment logs', 'Reports'],
+        architecture: 'The browser UI communicates with a Node.js API backed by MySQL.',
+        architectureVisual: '[Browser UI] -> [Node.js REST API] -> [MySQL]',
+        challenges: 'Keeping inventory adjustments auditable while making common updates quick.',
+        learnings: 'Operational tools work best when the interface mirrors the real workflow.',
+        github: 'https://github.com',
+        demo: '#',
+        prev: 'task-planner',
+        next: 'pawlse-system',
+        graphic: '<img src="assets/images/projects/project-backend.svg" alt="Inventory system preview" style="display:block;width:100%;height:100%;object-fit:cover;">'
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const projectId = params.get('id') || 'pawlse-system';
+      const project = PROJECTS_DATABASE[projectId];
+
+      if (!project) {
+        document.getElementById('mainContainer').innerHTML = `
+          <div class="container" style="padding: 100px 0; text-align: center;">
+            <h2>Case Study Not Found</h2>
+            <p style="margin-bottom: var(--space-xl);">The requested case study id does not exist in the archive database.</p>
+            <a href="projects.html" class="btn btn-primary">Return to Projects</a>
+          </div>
+        `;
+        return;
+      }
+
+      document.title = `${project.title} | Case Study Walkthrough`;
+      const statusBadge = document.getElementById('detailStatus');
+      statusBadge.innerText = project.status;
+      statusBadge.className = `badge ${project.statusClass}`;
+
+      document.getElementById('detailCategory').innerText = project.category;
+      document.getElementById('detailTitle').innerText = project.title;
+      document.getElementById('detailSubtitle').innerText = project.subtitle;
+      document.getElementById('detailOverview').innerText = project.overview;
+      document.getElementById('detailProblem').innerText = project.problem;
+      document.getElementById('detailSolution').innerText = project.solution;
+      document.getElementById('detailArchitecture').innerText = project.architecture;
+      document.getElementById('detailChallengeDesc').innerText = project.challenges;
+      document.getElementById('detailLearnings').innerText = project.learnings;
+      document.getElementById('detailTimeline').innerText = project.timeline;
+      document.getElementById('detailGraphicContainer').innerHTML = project.graphic;
+      document.getElementById('detailArchitectureVisual').innerText = project.architectureVisual;
+      document.getElementById('detailGitLink').setAttribute('href', project.github);
+      document.getElementById('detailDemoLink').setAttribute('href', project.demo);
+
+      const solList = document.getElementById('detailSolutionList');
+      solList.innerHTML = '<ul style="display: flex; flex-direction: column; gap: var(--space-xs); margin-top: var(--space-md); margin-bottom: var(--space-lg); padding-left: 20px; list-style: disc;"></ul>';
+      const ulEl = solList.querySelector('ul');
+      project.solutionBullets.forEach((bullet) => {
+        const liEl = document.createElement('li');
+        liEl.innerText = bullet;
+        liEl.style.color = 'var(--text-secondary)';
+        ulEl.appendChild(liEl);
+      });
+
+      const techContainer = document.getElementById('detailTech');
+      techContainer.innerHTML = '';
+      project.tech.forEach((tech) => {
+        const chip = document.createElement('span');
+        chip.className = 'tech-tag';
+        chip.innerText = tech;
+        techContainer.appendChild(chip);
+      });
+
+      document.getElementById('prevProjectBtn').setAttribute('href', `project-details.html?id=${project.prev}`);
+      document.getElementById('nextProjectBtn').setAttribute('href', `project-details.html?id=${project.next}`);
+    });
+  </script>
+
+  <!-- Application Modules -->
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

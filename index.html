@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer Portfolio | Practical Digital Systems</title>
+  <meta name="description"
+    content="Developer portfolio for practical web, Android, backend, and data-driven digital systems built for real-world needs.">
+  <meta name="keywords"
+    content="Software Developer, Web Developer, Android Developer, Backend Engineer, JavaScript, Kotlin, Node.js">
+  <meta name="author" content="Developer">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=Inter:wght@100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+  <div class="blur-glow-container" aria-hidden="true">
+    <div class="blur-glow blur-glow-1 float-bg-1"></div>
+    <div class="blur-glow blur-glow-2 float-bg-2"></div>
+  </div>
+
+  <header id="siteHeader">
+    <div class="container nav-wrapper">
+      <a href="index.html#home" class="logo" aria-label="Developer Portfolio Home">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+        <span>DEV//SEAN</span>
+      </a>
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#achievements" class="nav-link">Certificates</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggler" type="button" aria-label="Toggle Theme">
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="4.22" x2="19.78" y2="5.64"></line>
+          </svg>
+          <span class="theme-toggle-text">Dark</span>
+        </button>
+        <button class="hamburger" type="button" aria-label="Toggle Mobile Menu" aria-expanded="false"
+          aria-controls="mobileNavbar">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNavbar" aria-label="Mobile Navigation" aria-hidden="true">
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#services" class="nav-link">Services</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#achievements" class="nav-link">Certificates</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+
+  <main>
+    <div class="hero-tech-shell" data-parallax-shell>
+      <div class="arc-aura-bg" aria-hidden="true">
+        <span class="arc-aura-starfield"></span>
+        <span class="arc-aura-column arc-aura-column-1"></span>
+        <span class="arc-aura-column arc-aura-column-2"></span>
+        <span class="arc-aura-column arc-aura-column-3"></span>
+        <span class="arc-aura-horizon"></span>
+      </div>
+      <section class="hero-section" id="home">
+        <div class="container hero-layout">
+          <div class="hero-content hero-copy reveal">
+            <span class="section-kicker">Practical Systems Developer</span>
+            <h1>Developer building <span class="gradient-text">practical digital systems</span> for real-world needs.
+            </h1>
+            <p class="hero-lead">I design and develop clean web interfaces, native Android experiences, and backend
+              systems that solve clear user and business problems without unnecessary complexity.</p>
+            <div class="hero-actions" aria-label="Primary actions">
+              <a href="#projects" class="btn btn-primary">View Projects</a>
+              <a href="#contact" class="btn btn-secondary">Contact Me</a>
+              <a href="assets/documents/resume-placeholder.txt" class="btn btn-outline" download
+                aria-label="Download resume">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Resume
+              </a>
+            </div>
+            <div class="hero-socials social-links" aria-label="Social profile links">
+              <span class="social-label">Connect</span>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-icon"
+                aria-label="GitHub Profile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                  </path>
+                </svg></a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn-icon"
+                aria-label="LinkedIn Profile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg></a>
+              <a href="mailto:hello@example.com" class="btn-icon" aria-label="Email Me"><svg width="20" height="20"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg></a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="btn-icon"
+                aria-label="Facebook Profile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg></a>
+            </div>
+          </div>
+          <aside class="hero-visual reveal delay-2" aria-label="Developer profile image">
+            <div class="profile-frame">
+              <img src="assets/images/profile/hero_profile.jpg" alt="Developer profile portrait" class="profile-image">
+              <div class="profile-status">
+                <span class="status-dot" aria-hidden="true"></span>
+                Hello World!
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <div class="marquee-container" aria-label="Expertise Highlights List">
+        <div class="marquee-content">
+          <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true">
+              <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>Web Development</span>
+          <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true">
+              <rect x="5" y="2" width="14" height="20" rx="2"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>Android Development</span>
+          <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true">
+              <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"></path>
+            </svg>Backend Systems</span>
+          <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>APIs &amp; Microservices</span>
+          <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true">
+              <path d="M12 20h9"></path>
+              <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path>
+            </svg>Clean Interfaces</span>
+          <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true">
+              <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>Web Development</span>
+          <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true">
+              <rect x="5" y="2" width="14" height="20" rx="2"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>Android Development</span>
+          <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true">
+              <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"></path>
+            </svg>Backend Systems</span>
+        </div>
+      </div>
+    </div>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading section-heading-row reveal">
+          <div>
+            <span class="section-kicker">Works Showcase</span>
+            <h2>Featured Projects</h2>
+            <p class="section-lead">A bento view of practical systems across interfaces, mobile workflows, backend
+              infrastructure, and experiments.</p>
+          </div>
+          <a href="projects.html" class="btn btn-secondary">Explore All Projects</a>
+        </div>
+        <div class="project-bento" data-render="featured-projects" aria-label="Featured project bento grid">
+          <article class="card project-card project-card-large reveal">
+            <div class="project-image-wrapper">
+              <div class="project-badges">
+                <span class="badge badge-category">Full Stack</span>
+                <span class="badge badge-completed">Completed</span>
+                <span class="badge badge-case-study">Case Study</span>
+              </div>
+              <img src="assets/images/projects/project-web.svg" alt="SaaS metrics dashboard project preview"
+                class="project-image">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">SaaS Metrics Dashboard Platform</h3>
+              <p class="project-desc">A lightweight analytics dashboard with realtime telemetry, responsive data panels,
+                and a clean interface for decision-making teams.</p>
+              <div class="project-tech"><span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span
+                  class="tech-tag">JavaScript</span><span class="tech-tag">Node.js</span></div>
+              <div class="project-actions"><a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-outline">GitHub</a><a href="project-details.html?id=saas-dashboard"
+                  class="btn btn-secondary">Case Study</a></div>
+            </div>
+          </article>
+          <article class="card project-card project-card-medium reveal delay-1">
+            <div class="project-image-wrapper">
+              <div class="project-badges">
+                <span class="badge badge-category">Android/Mobile</span>
+                <span class="badge badge-completed">Completed</span>
+              </div><img src="assets/images/projects/project-mobile.svg" alt="FocusFlow Android app project preview"
+                class="project-image">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">FocusFlow Android App</h3>
+              <p class="project-desc">A native productivity app with offline timers, Room storage, and focused session
+                analytics.</p>
+              <div class="project-tech"><span class="tech-tag">Kotlin</span><span class="tech-tag">Jetpack</span><span
+                  class="tech-tag">Room</span></div>
+              <div class="project-actions"><a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-outline">GitHub</a><a href="project-details.html?id=focus-flow"
+                  class="btn btn-secondary">View Details</a></div>
+            </div>
+          </article>
+          <article class="card project-card project-card-medium reveal delay-2">
+            <div class="project-image-wrapper">
+              <div class="project-badges">
+                <span class="badge badge-category">Backend</span>
+                <span class="badge badge-progress">In Progress</span>
+              </div><img src="assets/images/projects/project-backend.svg" alt="Microservices API gateway project preview"
+                class="project-image">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Microservices API Gateway</h3>
+              <p class="project-desc">A routing and auth gateway for distributed services, rate limits, and service
+                telemetry.</p>
+              <div class="project-tech"><span class="tech-tag">Node.js</span><span class="tech-tag">Redis</span><span
+                  class="tech-tag">Docker</span></div>
+              <div class="project-actions"><a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-outline">GitHub</a><a href="project-details.html?id=api-gateway"
+                  class="btn btn-secondary">View Details</a></div>
+            </div>
+          </article>
+          <article class="card project-card project-card-wide reveal">
+            <div class="project-image-wrapper">
+              <div class="project-badges">
+                <span class="badge badge-category">Full Stack</span>
+                <span class="badge badge-case-study">Case Study</span>
+              </div><img src="assets/images/projects/project-web.svg" alt="Realtime chat portal project preview"
+                class="project-image">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Realtime Chat Portal</h3>
+              <p class="project-desc">A socket-based messaging interface with rooms, file handling, and responsive
+                conversation views.</p>
+              <div class="project-tech"><span class="tech-tag">JavaScript</span><span
+                  class="tech-tag">WebSockets</span><span class="tech-tag">Node.js</span></div>
+              <div class="project-actions"><a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-outline">GitHub</a><a href="project-details.html?id=chat-portal"
+                  class="btn btn-secondary">Case Study</a></div>
+            </div>
+          </article>
+          <article class="card project-card project-card-small reveal delay-1">
+            <div class="project-image-wrapper">
+              <div class="project-badges">
+                <span class="badge badge-category">System</span>
+                <span class="badge badge-experimental">Experimental</span>
+              </div><img src="assets/images/projects/project-experimental.svg" alt="Compiler experiment project preview"
+                class="project-image">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Toy Compiler in C</h3>
+              <p class="project-desc">A parser and AST compiler experiment for learning lower-level tooling.</p>
+              <div class="project-tech"><span class="tech-tag">C</span><span class="tech-tag">Assembly</span><span
+                  class="tech-tag">Linux</span></div>
+              <div class="project-actions"><a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-outline">GitHub</a><a href="project-details.html?id=compiler"
+                  class="btn btn-secondary">View Details</a></div>
+            </div>
+          </article>
+          <article class="card project-card project-card-small reveal delay-2">
+            <div class="project-image-wrapper">
+              <div class="project-badges">
+                <span class="badge badge-category">UI/UX</span>
+                <span class="badge badge-completed">Completed</span>
+              </div><img src="assets/images/projects/project-web.svg" alt="Design system kit project preview"
+                class="project-image">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Design System Kit</h3>
+              <p class="project-desc">Reusable interface patterns, tokens, and responsive page components.</p>
+              <div class="project-tech"><span class="tech-tag">Figma</span><span class="tech-tag">CSS</span><span
+                  class="tech-tag">Design Tokens</span></div>
+              <div class="project-actions"><a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-outline">GitHub</a><a href="project-details.html?id=design-system"
+                  class="btn btn-secondary">View Details</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section-muted">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-kicker">Offerings</span>
+          <h2>Services &amp; Capabilities</h2>
+        </div>
+        <div class="services-grid">
+          <article class="card service-card reveal">
+            <div class="service-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg></div>
+            <h3 class="service-title">Web Development</h3>
+            <p class="service-desc">Responsive, accessible interfaces with semantic HTML, modular CSS, and focused
+              JavaScript behavior.</p>
+          </article>
+          <article class="card service-card reveal delay-1">
+            <div class="service-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <rect x="5" y="2" width="14" height="20" rx="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg></div>
+            <h3 class="service-title">Android Development</h3>
+            <p class="service-desc">Native Kotlin apps with offline storage, clean state handling, and practical device
+              workflows.</p>
+          </article>
+          <article class="card service-card reveal delay-2">
+            <div class="service-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <rect x="3" y="4" width="18" height="8" rx="2"></rect>
+                <rect x="3" y="14" width="18" height="6" rx="2"></rect>
+                <line x1="7" y1="8" x2="7.01" y2="8"></line>
+                <line x1="7" y1="17" x2="7.01" y2="17"></line>
+              </svg></div>
+            <h3 class="service-title">Backend Systems</h3>
+            <p class="service-desc">APIs, authentication, rate limits, database flows, and deployment-ready service
+              structures.</p>
+          </article>
+          <article class="card service-card reveal">
+            <div class="service-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"></path>
+              </svg></div>
+            <h3 class="service-title">Database Design</h3>
+            <p class="service-desc">Schemas, query performance, storage decisions, and data layouts that support real
+              usage.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading reveal"><span class="section-kicker">Tech Stack</span>
+          <h2>Skills &amp; Toolkit</h2>
+        </div>
+        <div class="skills-grid" data-render="skills">
+          <article class="card skills-category reveal">
+            <h3>Frontend</h3>
+            <div class="skills-chips">
+              <span class="skill-chip"><object data="/assets/icons/html.svg" width="24" height="24"></object>HTML</span>
+              <span class="skill-chip"><object data="/assets/icons/css.svg" width="24" height="24"></object>CSS</span>
+              <span class="skill-chip"><object data="/assets/icons/javascript.svg" width="24" height="24"></object>JavaScript</span>
+              <span class="skill-chip"><object data="/assets/icons/react.svg" width="24" height="24"></object>React</span>
+              <span class="skill-chip"><object data="/assets/icons/next-js.svg" width="24" height="24"></object>Next.js</span>
+              <span class="skill-chip"><object data="/assets/icons/tailwind-css.svg" width="24" height="24"></object>Tailwind CSS</span>
+              <span class="skill-chip"><object data="/assets/icons/typescript.svg" width="24" height="24"></object>Typescript</span>
+            </div>
+          </article>
+          <article class="card skills-category reveal delay-1">
+            <h3>Backend</h3>
+            <div class="skills-chips">
+              <span class="skill-chip"><object data="/assets/icons/laravel.svg" width="24" height="24"></object>Laravel</span>
+              <span class="skill-chip"><object data="/assets/icons/laravel.svg" width="24" height="24"></object>Inertia.js</span>
+              <span class="skill-chip"><object data="/assets/icons/node-js.svg" width="24" height="24"></object>Node.js</span>
+              <span class="skill-chip"><object data="/assets/icons/express-js.svg" width="24" height="24"></object>Express.js</span>
+              <span class="skill-chip"><object data="/assets/icons/fastapi.svg" width="24" height="24"></object>FastAPI</span>
+              <span class="skill-chip"><object data="/assets/icons/django.svg" width="24" height="24"></object>Django</span>
+              <span class="skill-chip"><object data="/assets/icons/restapi.svg" width="24" height="24"></object>RESTful APIs</span>
+              <span class="skill-chip"><object data="/assets/icons/jwt-auth.svg" width="24" height="24"></object>JWT Authentication</span>
+            </div>
+          </article>
+          <article class="card skills-category reveal delay-2">
+            <h3>Android / Mobile</h3>
+            <div class="skills-chips">
+              <span class="skill-chip"><object data="/assets/icons/java.svg" width="24" height="24"></object>Java</span>
+              <span class="skill-chip"><object data="/assets/icons/react.svg" width="24" height="24"></object>React Native</span>
+              <span class="skill-chip"><object data="/assets/icons/database.svg" width="24" height="24"></object>Room</span>
+              <span class="skill-chip"><object data="/assets/icons/flutter.svg" width="24" height="24"></object>Flutter</span>
+              <span class="skill-chip"><object data="/assets/icons/sqlite.svg" width="24" height="24"></object>SQLite</span>
+            </div>
+          </article>
+          <article class="card skills-category reveal">
+            <h3>Database</h3>
+            <div class="skills-chips">
+              <span class="skill-chip"><object data="/assets/icons/mysql.svg" width="24" height="24"></object>MySQL</span>
+              <span class="skill-chip"><object data="/assets/icons/postgresql.svg" width="24" height="24"></object>PostgreSQL</span>
+              <span class="skill-chip"><object data="/assets/icons/redis.svg" width="24" height="24"></object>Redis</span>
+              <span class="skill-chip"><object data="/assets/icons/mongodb.svg" width="24" height="24"></object>MongoDB</span>
+              <span class="skill-chip"><object data="/assets/icons/database.svg" width="24" height="24"></object>Microsoft SQL</span>
+              <span class="skill-chip"><object data="/assets/icons/firebase.svg" width="24" height="24"></object>Firebase</span>
+            </div>
+          </article>
+          <article class="card skills-category reveal delay-1">
+            <h3>DevOps Tools</h3>
+            <div class="skills-chips">
+              <span class="skill-chip"><object data="/assets/icons/github.svg" width="24" height="24"></object>GitHub / Git</span>
+              <span class="skill-chip"><object data="/assets/icons/docker.svg" width="24" height="24"></object>Docker</span>
+              <span class="skill-chip"><object data="/assets/icons/terminal.svg" width="24" height="24"></object>Terminal</span>
+              <span class="skill-chip"><object data="/assets/icons/postman.svg" width="24" height="24"></object>Postman</span>
+              <span class="skill-chip"><object data="/assets/icons/github.svg" width="24" height="24"></object>GitHub Actions</span>
+              <span class="skill-chip"><object data="/assets/icons/nginx.svg" width="24" height="24"></object>Nginx</span>
+              <span class="skill-chip"><object data="/assets/icons/cloudflare.svg" width="24" height="24"></object>Cloudflare DNS</span>
+            </div>
+          </article>
+          <article class="card skills-category reveal delay-2">
+            <h3>Design &amp; Deployment</h3>
+            <div class="skills-chips">
+              <span class="skill-chip"><object data="/assets/icons/figma.svg" width="24" height="24"></object>Figma</span>
+              <span class="skill-chip"><object data="/assets/icons/photoshop.svg" width="24" height="24"></object>Adobe Photoshop</span>
+              <span class="skill-chip"><object data="/assets/icons/vercel.svg" width="24" height="24"></object>Vercel</span>
+              <span class="skill-chip"><object data="/assets/icons/digitalocean.svg" width="24" height="24"></object>DigitalOcean</span>
+              <span class="skill-chip"><object data="/assets/icons/namecheap.svg" width="24" height="24"></object>NameCheap</span>
+              <span class="skill-chip"><object data="/assets/icons/supabase.svg" width="24" height="24"></object>Supabase</span>
+              <span class="skill-chip"><object data="/assets/icons/render.svg" width="24" height="24"></object>Render</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section-muted">
+      <div class="container">
+        <div class="about-layout">
+          <div class="about-copy reveal">
+            <span class="section-kicker">My Story</span>
+            <h2>About Me</h2>
+            <p>I’m a software engineer passionate about building meaningful digital
+              experiences and continuously growing in the field of technology. I enjoy
+              solving problems, learning new tools, and creating solutions that are both
+              practical and user-focused.</p>
+            <p>I care about clear architecture, readable interfaces, and building the smallest useful thing well before
+              adding complexity. My work connects technical structure with everyday usability.</p>
+            <div class="about-stats">
+              <div class="stat-card card"><strong>5+</strong><span>Years Experience</span></div>
+              <div class="stat-card card"><strong>20+</strong><span>Projects Completed</span></div>
+            </div>
+          </div>
+          <div class="about-media reveal delay-1">
+            <div class="card image-card"><img src="assets/images/about/about_me_profile.png"
+                alt="Developer working on practical software systems" class="about-image"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="journey">
+      <div class="container">
+        <div class="section-heading reveal"><span class="section-kicker">Journey &amp; Education</span>
+          <h2>How I Build Context</h2>
+        </div>
+        <div class="journey-layout">
+          <article class="card journey-card reveal">
+            <h3>Developer Journey</h3>
+            <div class="reveal">
+              <div class="timeline" data-render="developer-journey">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item timeline-item-left">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-card">
+                    <div class="timeline-date">2020 - Present</div>
+                    <h4 class="timeline-title">Fullstack Developer</h4>
+                    <div class="timeline-org">Freelance</div>
+                    <p class="timeline-desc"> Building scalable web applications for clients across different
+                      industries using modern frontend and backend technologies.</p>
+                  </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item timeline-item-right">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-card">
+                    <div class="timeline-date">2020 - 2022</div>
+                    <h4 class="timeline-title">Software Engineer</h4>
+                    <div class="timeline-org">Contract-based</div>
+                    <p class="timeline-desc">Collaborated with development teams to design, maintain, and
+                      improve business applications. Worked on backend integrations,
+                      feature implementation, debugging, and optimizing system
+                      performance for various client projects.</p>
+                  </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item timeline-item-left">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-card">
+                    <div class="timeline-date">2017-2019</div>
+                    <h4 class="timeline-title">Junior Software<br>Developer</h4>
+                    <div class="timeline-org">2ndBanana</div>
+                    <p class="timeline-desc">Assisted in the development and maintenance of software applications.
+                      Participated in code reviews, testing, and debugging to ensure quality and performance.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="card education-card reveal delay-1">
+            <h3>Education Background</h3>
+            <div class="compact-timeline" data-render="education-background">
+              <div><span>Tertiary</span>
+                <h4>Bachelor of Science in Information Technology - STI College</h4>
+                <p>Mortola Street, Barangay 40, Cagayan De Oro City 9000<br>2023-2027</p>
+              </div>
+              <div><span>Senior High School</span>
+                <h4>IT in Mobile App and Web Development - STI College</h4>
+                <p>Mortola Street, Barangay 40, Cagayan De Oro City 9000<br>2021-2023</p>
+              </div>
+              <div><span>Junior High School</span>
+                <h4>Misamis Oriental General Comprehensive High School</h4>
+                <p>Don Apolinar Velez Street, Cagayan De Oro City, 9000<br>2017-2021</p>
+              </div>
+              <div><span>Elementary</span>
+                <h4>City Central School</h4>
+                <p>Yacapin Velez Street, Cagayan De Oro City, 9000<br>2011-2017</p>
+              </div>
+            </div>
+            <div class="learning-attended" aria-labelledby="learning-attended-title">
+              <h3 id="learning-attended-title">Training, Seminars &amp; Workshops Attended</h3>
+              <div class="learning-attended-grid" data-render="learning-attended">
+                <section class="learning-group" aria-labelledby="training-attended-title">
+                  <h4 id="training-attended-title">Training, Seminars & Workshops</h4>
+                  <ul>
+                    <li>Sphinx’s Archive Chapter 1: IT Research Innovation – STI College, 2025</li>
+                    <li>SAP x Accenture Career Talk For Student – STI College, 2025</li>
+                    <li>Leadership Training Program –  STI College, 2025</li>
+                    <li>Copilot CDO: AI-Powered Coding For Everyone – GitHub, 2025</li>
+                    <li>Agri-Tech Innovate: Accelerating Digital Solutions for Sustainable Agriculture & Fisheries - USTP, 2025</li>
+                    <li>Code Camp: Newbie Coding Booth – DSC STI, 2024</li>
+                    <li>TechKwentuhan – DevCon CDO, 2024</li>
+                    <li>Git Mastery Basics To Beyond – DevCon CDO, 2024</li>
+                    <li>New Year, New Skills: Web Dev Tutorial – DSC STI, 2024</li>
+                    <li>Java Tutorial – STI College, 2023</li>
+                    <li>Bridging Gaps: Java Tutorials – DSC STI, 2022</li>
+                  </ul>
+                </section>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements" class="section-muted">
+      <div class="container">
+        <div class="section-heading section-heading-row reveal">
+          <div><span class="section-kicker">Achievements</span>
+            <h2>Certificates &amp; Recognition</h2>
+            <p class="section-lead">A growing record of certifications, learning milestones, and practical proof of
+              skill.</p>
+          </div>
+          <a href="certificates.html" class="btn btn-secondary">View All Certificates</a>
+        </div>
+        <div class="certificate-grid" data-render="featured-certificates">
+          <article class="card certificate-card reveal" data-modal-title="Java Fundamentals"
+            data-modal-details="Issuer: Oracle Academy | Year: 2024"
+            data-modal-image="assets/images/certificates/java-fundamentals.jpg" tabindex="0">
+            <img src="assets/images/certificates/java-fundamentals.jpg"
+              alt="Java Fundamentals certificate placeholder" class="certificate-image">
+            <div>
+              <h3>Java Fundamentals</h3>
+              <p>Oracle Academy</p><span>2024</span>
+            </div>
+          </article>
+          <article class="card certificate-card reveal delay-1" data-modal-title="Copilot CDO: AI-Powered Coding For Everyone"
+            data-modal-details="Issuer: DevCon CDO | Year: 2025"
+            data-modal-image="assets/images/certificates/copilot-cdo-ai.png" tabindex="0">
+            <img src="assets/images/certificates/copilot-cdo-ai.png"
+              alt="Copilot CDO: AI-Powered Coding For Everyone certificate placeholder" class="certificate-image">
+            <div>
+              <h3>Copilot CDO: AI-Powered Coding For Everyone</h3>
+              <p>DevCon CDO</p><span>2025</span>
+            </div>
+          </article>
+          <article class="card certificate-card reveal delay-2" data-modal-title="Git Mastery: Basic to Beyond"
+            data-modal-details="Issuer: DevCon CDO | Year: 2024"
+            data-modal-image="assets/images/certificates/git-mastery.png" tabindex="0">
+            <img src="assets/images/certificates/git-mastery.png"
+              alt="Git Mastery: Basic to Beyond certificate placeholder" class="certificate-image">
+            <div>
+              <h3>Git Mastery: Basic to Beyond</h3>
+              <p>DevCon CDO</p><span>2024</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="card contact-panel reveal">
+          <div class="contact-layout">
+            <div class="contact-copy">
+              <span class="section-kicker">Get in Touch</span>
+              <h2>Let's build something useful</h2>
+              <p>Have an app idea, backend challenge, or portfolio-worthy system to improve? Send the details and I will
+                respond with a practical next step.</p>
+              <div class="contact-methods">
+                <a href="mailto:hello@example.com" class="contact-method"><span class="btn-icon" aria-hidden="true"><svg
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg></span><span><span class="contact-method-label">Email: </span><span
+                      class="contact-method-value">sbmalferrari@gmail.com</span></span></a>
+                <a href="tel:+1234567890" class="contact-method"><span class="btn-icon" aria-hidden="true"><svg
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 19 19.5 19.5 0 0 1 5.19 13 19.79 19.79 0 0 1 2.27 4.37 2 2 0 0 1 4.26 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z">
+                      </path>
+                    </svg></span><span><span class="contact-method-label">Call / Telegram: </span><span
+                      class="contact-method-value">+63 967 2060 194</span></span></a>
+              </div>
+            </div>
+            <form class="contact-form" id="portfolioContactForm" novalidate>
+              <div class="form-group"><label for="formName">Name</label><input type="text" id="formName"
+                  class="form-control" placeholder="Your Name" required></div>
+              <div class="form-group"><label for="formEmail">Email Address</label><input type="email" id="formEmail"
+                  class="form-control" placeholder="your@email.com" required></div>
+              <div class="form-group"><label for="formSubject">Subject</label><input type="text" id="formSubject"
+                  class="form-control" placeholder="Project details / Job role" required></div>
+              <div class="form-group"><label for="formMessage">Message</label><textarea id="formMessage"
+                  class="form-control" placeholder="What are we building?" required></textarea></div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="siteFooter">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-info"><a href="index.html#home" class="logo"
+            aria-label="Developer Portfolio Footer Logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg><span>DEV//SEAN</span></a>
+          <p>Building robust software systems optimized for real users, clear workflows, and maintainable delivery.</p>
+        </div>
+        <div class="footer-links-group">
+          <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#about">About</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Pages</h4>
+            <ul>
+              <li><a href="projects.html">All Projects</a></li>
+              <li><a href="certificates.html">Certificates</a></li>
+              <li><a href="project-details.html?id=saas-dashboard">Case Study</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Socials</h4>
+            <ul>
+              <li><a href="https://github.com/M3XH4" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/sean-benedict-malferrari-254400309/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+              <li><a href="https://www.facebook.com/seanmalferrari/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Developer Portfolio. All rights reserved.</p>
+        <p>Sean Benedict Malferrari</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="certificate-modal" id="certificateModal" role="dialog" aria-modal="true"
+    aria-labelledby="certificateModalTitle" aria-hidden="true">
+    <div class="certificate-modal__backdrop" data-modal-close></div>
+    <div class="certificate-modal__dialog" role="document">
+      <button class="certificate-modal__close" type="button" aria-label="Close certificate preview"
+        data-modal-close>&times;</button>
+      <img src="" alt="" class="certificate-modal__image" id="certificateModalImage">
+      <div class="certificate-modal__content">
+        <h2 id="certificateModalTitle">Certificate</h2>
+        <p id="certificateModalDetails"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/portfolio-data.js"></script>
+  <script src="js/render-content.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

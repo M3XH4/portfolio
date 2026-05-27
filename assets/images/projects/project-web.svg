@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Web project mockup</title>
+  <desc id="desc">Dashboard-style web application mockup for a featured project card.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" rx="36" fill="url(#bg)"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#0b1120" stroke="rgba(255,255,255,0.08)"/>
+  <rect x="42" y="42" width="94" height="591" rx="28" fill="#111827"/>
+  <circle cx="89" cy="90" r="24" fill="url(#accent)"/>
+  <rect x="66" y="150" width="46" height="10" rx="5" fill="rgba(255,255,255,0.25)"/>
+  <rect x="66" y="184" width="46" height="10" rx="5" fill="rgba(255,255,255,0.12)"/>
+  <rect x="66" y="218" width="46" height="10" rx="5" fill="rgba(255,255,255,0.12)"/>
+  <rect x="171" y="84" width="360" height="18" rx="9" fill="rgba(255,255,255,0.1)"/>
+  <text x="171" y="130" fill="#f8fafc" font-family="Arial, sans-serif" font-size="34" font-weight="700">Analytics Dashboard</text>
+  <text x="171" y="165" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="18">Performance, telemetry, and client reporting in one place.</text>
+  <rect x="171" y="210" width="660" height="250" rx="24" fill="#0f172a" stroke="rgba(255,255,255,0.06)"/>
+  <path d="M 210 390 C 300 250, 390 430, 480 320 S 660 230, 780 280" fill="none" stroke="url(#accent)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M 210 390 C 300 250, 390 430, 480 320 S 660 230, 780 280 L 780 430 L 210 430 Z" fill="rgba(192,132,252,0.12)"/>
+  <circle cx="480" cy="320" r="10" fill="#f97316"/>
+  <rect x="171" y="488" width="202" height="120" rx="24" fill="#111827"/>
+  <rect x="389" y="488" width="202" height="120" rx="24" fill="#111827"/>
+  <rect x="607" y="488" width="224" height="120" rx="24" fill="#111827"/>
+  <text x="195" y="528" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="14" letter-spacing="2">REVENUE</text>
+  <text x="195" y="573" fill="#f8fafc" font-family="Arial, sans-serif" font-size="34" font-weight="700">$24.9K</text>
+  <text x="413" y="528" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="14" letter-spacing="2">USERS</text>
+  <text x="413" y="573" fill="#f8fafc" font-family="Arial, sans-serif" font-size="34" font-weight="700">1,824</text>
+  <text x="631" y="528" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="14" letter-spacing="2">CONVERSION</text>
+  <text x="631" y="573" fill="#f8fafc" font-family="Arial, sans-serif" font-size="34" font-weight="700">3.4%</text>
+</svg>

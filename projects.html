@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects Archive | Developer Portfolio</title>
+  <meta name="description" content="All portfolio projects across web, mobile, backend, and experimental software systems.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header id="siteHeader" class="scrolled">
+    <div class="container nav-wrapper">
+      <a href="index.html#home" class="logo" aria-label="Developer Portfolio Home">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        <span>DEV//PORTFOLIO</span>
+      </a>
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="projects.html" class="nav-link active">Projects</a></li>
+          <li><a href="index.html#services" class="nav-link">Services</a></li>
+          <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="certificates.html" class="nav-link">Certificates</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggler" type="button" aria-label="Toggle Theme">
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="4.22" x2="19.78" y2="5.64"></line></svg>
+          <span class="theme-toggle-text">Dark</span>
+        </button>
+        <button class="hamburger" type="button" aria-label="Toggle Mobile Menu" aria-expanded="false" aria-controls="mobileNavbar"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNavbar" aria-label="Mobile Navigation" aria-hidden="true">
+    <a href="projects.html" class="nav-link">Projects</a>
+    <a href="index.html#services" class="nav-link">Services</a>
+    <a href="index.html#skills" class="nav-link">Skills</a>
+    <a href="index.html#about" class="nav-link">About</a>
+    <a href="certificates.html" class="nav-link">Certificates</a>
+    <a href="index.html#contact" class="nav-link">Contact</a>
+  </nav>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-kicker">Works Archive</span>
+          <h1>All Projects</h1>
+          <p class="section-lead">A curated set of real-world web applications, Android builds, backend systems, and experimental tools.</p>
+        </div>
+        <div class="filter-btn-group reveal delay-1" data-filter-group data-filter-target=".project-card-wrapper" role="group" aria-label="Project filter options">
+          <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-btn" type="button" data-filter="web" aria-pressed="false">Web</button>
+          <button class="filter-btn" type="button" data-filter="mobile" aria-pressed="false">Mobile</button>
+          <button class="filter-btn" type="button" data-filter="backend" aria-pressed="false">Backend</button>
+          <button class="filter-btn" type="button" data-filter="fullstack" aria-pressed="false">Full Stack</button>
+          <button class="filter-btn" type="button" data-filter="experimental" aria-pressed="false">Experimental</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="projects-gallery" id="projectsGrid" data-render="projects-gallery">
+          <div class="project-card-wrapper reveal" data-category="web fullstack">
+            <article class="card project-card">
+              <div class="project-image-wrapper">
+                <div class="project-badges"><span class="badge badge-category">Full Stack</span><span
+                    class="badge badge-completed">Completed</span><span class="badge badge-case-study">Case Study</span>
+                </div><img src="assets/images/projects/project-web.svg" alt="SaaS metrics dashboard preview"
+                  class="project-image">
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">SaaS Metrics Dashboard Platform</h3>
+                <p class="project-desc">A premium analytics dashboard for realtime telemetry, client metrics, and
+                  decision support.</p>
+                <div class="project-tech"><span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span
+                    class="tech-tag">JavaScript</span><span class="tech-tag">Node.js</span></div>
+                <div class="project-actions"><a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-outline">GitHub</a><a href="project-details.html?id=saas-dashboard"
+                    class="btn btn-secondary">View Details</a></div>
+              </div>
+            </article>
+          </div>
+          <div class="project-card-wrapper reveal delay-1" data-category="mobile">
+            <article class="card project-card">
+              <div class="project-image-wrapper">
+                <div class="project-badges"><span class="badge badge-category">Android/Mobile</span><span
+                    class="badge badge-completed">Completed</span></div><img
+                  src="assets/images/projects/project-mobile.svg" alt="FocusFlow Android app preview"
+                  class="project-image">
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">FocusFlow Android App</h3>
+                <p class="project-desc">Native productivity app with focus timers, local analytics, and offline-first
+                  storage.</p>
+                <div class="project-tech"><span class="tech-tag">Kotlin</span><span class="tech-tag">Jetpack</span><span
+                    class="tech-tag">Room</span></div>
+                <div class="project-actions"><a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-outline">GitHub</a><a href="project-details.html?id=focus-flow"
+                    class="btn btn-secondary">Live Demo</a></div>
+              </div>
+            </article>
+          </div>
+          <div class="project-card-wrapper reveal delay-2" data-category="backend">
+            <article class="card project-card">
+              <div class="project-image-wrapper">
+                <div class="project-badges"><span class="badge badge-category">Backend</span><span
+                    class="badge badge-progress">In Progress</span></div><img
+                  src="assets/images/projects/project-backend.svg" alt="Microservices API Gateway preview"
+                  class="project-image">
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Microservices API Gateway</h3>
+                <p class="project-desc">Custom gateway for routing, token checks, rate limits, and API performance
+                  telemetry.</p>
+                <div class="project-tech"><span class="tech-tag">Node.js</span><span class="tech-tag">Express</span><span
+                    class="tech-tag">Redis</span></div>
+                <div class="project-actions"><a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-outline">GitHub</a><a href="project-details.html?id=api-gateway"
+                    class="btn btn-secondary">View Details</a></div>
+              </div>
+            </article>
+          </div>
+          <div class="project-card-wrapper reveal" data-category="experimental">
+            <article class="card project-card">
+              <div class="project-image-wrapper">
+                <div class="project-badges"><span class="badge badge-category">System</span><span
+                    class="badge badge-experimental">Experimental</span></div><img
+                  src="assets/images/projects/project-experimental.svg" alt="Toy compiler experiment preview"
+                  class="project-image">
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Toy Compiler in C</h3>
+                <p class="project-desc">A custom parser and AST compiler experiment built to understand language
+                  tooling.</p>
+                <div class="project-tech"><span class="tech-tag">C</span><span class="tech-tag">Assembly</span><span
+                    class="tech-tag">Linux</span></div>
+                <div class="project-actions"><a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-outline">GitHub</a><a href="project-details.html?id=compiler"
+                    class="btn btn-secondary">View Details</a></div>
+              </div>
+            </article>
+          </div>
+          <div class="project-card-wrapper reveal delay-1" data-category="web fullstack">
+            <article class="card project-card">
+              <div class="project-image-wrapper">
+                <div class="project-badges"><span class="badge badge-category">Full Stack</span><span
+                    class="badge badge-case-study">Case Study</span></div><img
+                  src="assets/images/projects/project-web.svg" alt="Realtime chat portal preview" class="project-image">
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Realtime Chat Portal</h3>
+                <p class="project-desc">Socket-based messaging with rooms, file handling, and responsive conversation
+                  views.</p>
+                <div class="project-tech"><span class="tech-tag">JavaScript</span><span
+                    class="tech-tag">WebSockets</span><span class="tech-tag">Node.js</span></div>
+                <div class="project-actions"><a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-outline">GitHub</a><a href="project-details.html?id=chat-portal"
+                    class="btn btn-secondary">View Details</a></div>
+              </div>
+            </article>
+          </div>
+          <div class="project-card-wrapper reveal" data-category="mobile">
+            <article class="card project-card">
+              <div class="project-image-wrapper">
+                <div class="project-badges"><span class="badge badge-category">Android/Mobile</span><span
+                    class="badge badge-progress">In Progress</span></div><img
+                  src="assets/images/projects/project-mobile.svg" alt="Task planner app preview" class="project-image">
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Task Planner App</h3>
+                <p class="project-desc">Android task planner with scheduling, custom calendar views, and local database
+                  caching.</p>
+                <div class="project-tech"><span class="tech-tag">Kotlin</span><span class="tech-tag">SQLite</span><span
+                    class="tech-tag">Compose</span></div>
+                <div class="project-actions"><a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-outline">GitHub</a><a href="project-details.html?id=task-planner"
+                    class="btn btn-secondary">View Details</a></div>
+              </div>
+            </article>
+          </div>
+          <div class="project-card-wrapper reveal delay-1" data-category="web">
+            <article class="card project-card">
+              <div class="project-image-wrapper">
+                <div class="project-badges"><span class="badge badge-category">UI/UX</span><span
+                    class="badge badge-completed">Completed</span></div><img src="assets/images/projects/project-web.svg"
+                  alt="Design system kit preview" class="project-image">
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Design System Kit</h3>
+                <p class="project-desc">Reusable interface patterns, tokens, and responsive page components for faster
+                  product builds.</p>
+                <div class="project-tech"><span class="tech-tag">Figma</span><span class="tech-tag">CSS</span><span
+                    class="tech-tag">Design Tokens</span></div>
+                <div class="project-actions"><a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-outline">GitHub</a><a href="project-details.html?id=design-system"
+                    class="btn btn-secondary">Live Demo</a></div>
+              </div>
+            </article>
+          </div>
+          <div class="project-card-wrapper reveal delay-2" data-category="backend fullstack">
+            <article class="card project-card">
+              <div class="project-image-wrapper">
+                <div class="project-badges"><span class="badge badge-category">System</span><span
+                    class="badge badge-progress">In Progress</span></div><img
+                  src="assets/images/projects/project-backend.svg" alt="Inventory system preview" class="project-image">
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Inventory Operations System</h3>
+                <p class="project-desc">A practical stock, supplier, and reporting workflow for small business
+                  operations.</p>
+                <div class="project-tech"><span class="tech-tag">Node.js</span><span class="tech-tag">MySQL</span><span
+                    class="tech-tag">REST API</span></div>
+                <div class="project-actions"><a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-outline">GitHub</a><a href="project-details.html?id=inventory-system"
+                    class="btn btn-secondary">View Details</a></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="siteFooter">
+    <div class="container">
+      <div class="footer-bottom"><p>&copy; 2026 Developer Portfolio. All rights reserved.</p><p><a href="index.html#home">Home</a> · <a href="certificates.html">Certificates</a></p></div>
+    </div>
+  </footer>
+
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/portfolio-data.js"></script>
+  <script src="js/render-content.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
