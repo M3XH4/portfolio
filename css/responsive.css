@@ -72,6 +72,10 @@
     grid-template-columns: 1fr;
   }
 
+  .certificate-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .services-grid,
   .stack-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -139,6 +143,33 @@
     grid-template-columns: 1fr !important;
   }
 
+  .hero-layout,
+  .hero-section > .container {
+    gap: var(--space-xl);
+    justify-items: center;
+  }
+
+  .hero-visual {
+    order: -1;
+    width: 100%;
+    max-width: min(20rem, 82vw);
+    margin: 0 auto;
+  }
+
+  .profile-frame {
+    width: 100%;
+    margin: 0 auto;
+    padding: var(--space-xs);
+  }
+
+  .profile-status {
+    left: var(--space-sm);
+    right: var(--space-sm);
+    bottom: var(--space-sm);
+    padding: 0.55rem 0.65rem;
+    font-size: 0.78rem;
+  }
+
   .hero-copy,
   .about-copy,
   .contact-copy {
@@ -146,16 +177,34 @@
     align-items: center;
   }
 
-  .hero-actions,
-  .project-actions {
+  .hero-copy {
+    width: 100%;
+  }
+
+  .hero-actions {
     width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    max-width: 42rem;
+    margin-inline: auto;
   }
 
-  .hero-actions .btn,
+  .project-actions {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .hero-actions .btn {
+    flex: 1 1 11rem;
+    min-width: min(100%, 11rem);
+    justify-content: center;
+  }
+
   .project-actions .btn {
-    flex: 1 1 10rem;
+    flex: 1 1 0;
+    min-width: 0;
     justify-content: center;
   }
 
@@ -166,10 +215,17 @@
     justify-content: center;
   }
 
+  .hero-lead {
+    max-width: 58ch;
+    margin-inline: auto;
+    text-align: center;
+  }
+
   .project-bento-grid,
   .project-bento,
   .projects-gallery,
   .services-grid,
+  .certificate-grid,
   .stack-grid,
   .about-stats,
   .contact-methods,
@@ -219,6 +275,65 @@
   .contact-method {
     padding: var(--space-sm);
   }
+
+  .certificate-card {
+    gap: var(--space-sm);
+  }
+
+  .certificate-image {
+    aspect-ratio: 16 / 11;
+    max-height: 15rem;
+  }
+
+  .certificate-modal {
+    align-items: stretch;
+    padding: var(--space-sm);
+  }
+
+  .certificate-modal__dialog {
+    width: 100%;
+    max-height: calc(100dvh - (var(--space-sm) * 2));
+    margin: auto 0;
+  }
+
+  .certificate-modal__close {
+    top: var(--space-xs);
+    right: var(--space-xs);
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .certificate-modal__image {
+    max-height: 58dvh;
+  }
+
+  .certificate-modal__content {
+    padding: var(--space-md);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: min(100%, 22rem);
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    min-height: 2.9rem;
+    flex: 0 0 auto;
+  }
+
+  .hero-socials {
+    justify-content: center;
+  }
+
+  .social-label {
+    flex-basis: 100%;
+    margin-right: 0;
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -230,9 +345,30 @@
     padding: var(--space-md);
   }
 
-  .project-actions .btn,
   .hero-actions .btn {
-    flex-basis: 100%;
+    flex-basis: auto;
+  }
+
+  .project-actions .btn {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .hero-visual {
+    max-width: min(17rem, 78vw);
+  }
+
+  .hero-section {
+    min-height: auto;
+  }
+
+  .project-badges {
+    gap: 0.2rem;
+  }
+
+  .badge {
+    font-size: 0.68rem;
+    padding: 0.22rem 0.48rem;
   }
 
   .theme-toggle {

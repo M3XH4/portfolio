@@ -3,6 +3,7 @@
 
 window.portfolioData = {
   projects: [
+    // PAWLSE: An AI Assisted Animal Welfare and Engagement Management System
     {
       id: 'pawlse-system',
       title: 'PAWLSE: An AI Assisted Animal Welfare and Engagement Management System',
@@ -29,7 +30,9 @@ window.portfolioData = {
       challenges: ['Coordinating multiple operational roles without making the interface feel heavy', 'Keeping animal, adopter, volunteer, and donation records traceable', 'Designing dashboards that support quick decisions for welfare operations'],
       learnings: ['Practical systems need clear permissions and audit-friendly workflows', 'Operational dashboards are strongest when they mirror real field processes', 'AI-assisted features still need transparent human review paths'],
       screenshots: [
-        { src: 'assets/images/projects/pawlse-cover.png', alt: 'PAWLSE animal welfare platform preview' }
+        { src: 'assets/images/projects/pawlse-cover.png', alt: 'PAWLSE animal welfare platform preview' },
+        { src: 'assets/images/projects/pawlse-rescue.png', alt: 'PAWLSE rescue report dashboard preview' },
+        { src: 'assets/images/projects/pawlse-sos.png', alt: 'PAWLSE sos report dashboard preview' },
       ],
       github: 'https://github.com/M3XH4/pawlse/',
       liveDemo: '#',
@@ -37,7 +40,7 @@ window.portfolioData = {
         description: 'React and Inertia power the interface while Laravel handles application logic, authentication, and database workflows.',
         diagram: '[React/Inertia UI] -> [Laravel Application] -> [MySQL Database]'
       },
-      timeline: '2026',
+      timeline: '2026-Present',
       role: 'Full-stack developer responsible for interface design, data modeling, Laravel workflows, and project architecture.',
       client: 'Academic / Portfolio Case Study',
       platform: 'Web application',
@@ -49,6 +52,7 @@ window.portfolioData = {
       thumbnail: 'assets/images/projects/pawlse-cover.png',
       heroImage: 'assets/images/projects/pawlse-cover.png'
     },
+    // INVYTE: A Mobile-First RSVP and Event Management System
     {
       id: 'invyte-system',
       title: 'Invyte: A RSVP & Event Management System',
@@ -58,7 +62,7 @@ window.portfolioData = {
       imageAlt: 'Invyte Android app project preview',
       category: 'Android/Mobile',
       filters: ['mobile'],
-      status: ['Completed'],
+      status: ['Deployed'],
       tech: ['React Native', 'React', 'Laravel', 'PostgreSQL', 'TailwindCSS', 'TypeScript'],
       githubUrl: 'https://github.com/M3XH4/invyte/',
       detailsUrl: 'project-details.html?id=invyte-system',
@@ -68,7 +72,7 @@ window.portfolioData = {
       bentoSize: 'medium',
       slug: 'invyte-system',
       shortDescription: 'A mobile-first RSVP and event management system with QR invitations, guest tracking, analytics, and real-time workflows.',
-      fullDescription: 'Invyte helps event organizers manage invitations, RSVPs, guest attendance, and event analytics in one workflow.',
+      fullDescription: 'Invyte helps event organizers manage invitations, RSVPs, guest attendance, and event analytics in one workflow. ',
       problem: 'Event coordination becomes difficult when RSVPs, attendance, and guest communication are scattered across different tools.',
       solution: 'Invyte combines QR-based invitations, guest flows, attendance tracking, and dashboards into one event management experience.',
       technologies: ['React Native', 'React', 'Laravel', 'PostgreSQL', 'TailwindCSS'],
@@ -76,10 +80,13 @@ window.portfolioData = {
       challenges: ['Keeping the RSVP flow quick while still supporting organizer-level event controls', 'Designing mobile-first screens that remain useful for event staff during check-in'],
       learnings: ['Mobile-first event tools need fast guest flows and clean organizer dashboards', 'QR workflows benefit from clear success, pending, and invalid states'],
       screenshots: [
-        { src: 'assets/images/projects/invyte-cover.png', alt: 'Invyte RSVP and event management project preview' }
+        { src: 'assets/images/projects/invyte-cover.png', alt: 'Invyte RSVP and event management project preview' },
+        { src: 'assets/images/projects/invyte-events.png', alt: 'Invyte event list and dashboard preview' },
+        { src: 'assets/images/projects/invyte-create-event-details.png', alt: 'Invyte create Event Details preview' },
       ],
       github: 'https://github.com/M3XH4/invyte/',
-      liveDemo: '#',
+      liveDemo: 'https://invyte-zri6.onrender.com/',
+      appUrl: 'https://expo.dev/artifacts/eas/dFcEJ59gCJrgDGyS9ZuGg4.apk',
       architecture: {
         description: 'Mobile and web clients communicate with a Laravel backend and PostgreSQL database.',
         diagram: '[Mobile/Web Client] -> [Laravel Backend] -> [PostgreSQL]'
@@ -90,12 +97,13 @@ window.portfolioData = {
       platform: 'Mobile and web',
       database: 'PostgreSQL',
       api: 'Laravel REST-style endpoints',
-      deployment: 'Mobile/web prototype',
+      deployment: 'Deployed on Render (web) and Expo (mobile)',
       achievements: ['Created a complete event workflow from invitation to attendance tracking'],
       tags: ['Events', 'QR Workflow', 'Mobile First'],
       thumbnail: 'assets/images/projects/invyte-cover.png',
       heroImage: 'assets/images/projects/invyte-cover.png'
     },
+    // CINEPLEX: A Cinema Management System
     {
       id: 'cineplex-system',
       title: 'Cineplex: A Cinema Management System',
@@ -105,7 +113,7 @@ window.portfolioData = {
       imageAlt: 'Cineplex cinema management system project preview',
       category: 'Full Stack',
       filters: ['web', 'fullstack'],
-      status: ['Completed'],
+      status: ['Deployed'],
       tech: ['MongoDB', 'Express.js', 'React', 'Node.js'],
       githubUrl: 'https://github.com/M3XH4/cineplex/',
       detailsUrl: 'project-details.html?id=cineplex-system',
@@ -142,6 +150,7 @@ window.portfolioData = {
       thumbnail: 'assets/images/projects/cineplex-cover.png',
       heroImage: 'assets/images/projects/cineplex-cover.png'
     },
+    // LIBRO: A Library Management System
     {
       id: 'libro-system',
       title: 'Libro: A Library Management System',
@@ -150,7 +159,7 @@ window.portfolioData = {
       imageAlt: 'Libro Library Management System preview',
       category: 'Full Stack',
       filters: ['web', 'fullstack'],
-      status: ['Completed'],
+      status: ['Deployed'],
       tech: ['Laravel', 'React', 'Tailwind CSS'],
       githubUrl: 'https://github.com/M3XH4/libro',
       detailsUrl: 'project-details.html?id=libro-library-system',
@@ -193,7 +202,7 @@ window.portfolioData = {
         }
       ],
       github: 'https://github.com/M3XH4/libro',
-      liveDemo: '#',
+      liveDemo: 'https://libro-iota-sable.vercel.app/',
       architecture: {
         description: 'The frontend React client communicates with a Laravel REST API using Sanctum authentication, while the backend handles business logic, database operations, and queued notifications.',
         diagram: '[React Client] -> [Laravel API] -> [MySQL Database]'
@@ -206,6 +215,7 @@ window.portfolioData = {
       thumbnail: 'assets/images/projects/libro-cover.png',
       heroImage: 'assets/images/projects/libro-cover.png'
     },
+    // CHILLGAMING: A Retro Arcade Platform
     {
       id: 'chillgaming-application',
       title: 'ChillGaming: A Retro Arcade Platform',
@@ -215,14 +225,12 @@ window.portfolioData = {
       imageAlt: 'ChillGaming retro arcade platform preview',
       category: 'Web Game Development',
       filters: ['web', 'games', 'javascript'],
-      status: ['Completed'],
+      status: ['Deployed'],
       tech: ['HTML5', 'CSS3', 'JavaScript', 'Canvas API', 'LocalStorage'],
       githubUrl: 'https://github.com/M3XH4/ChillGaming',
       detailsUrl: 'project-details.html?id=chillgaming-application',
       detailsLabel: 'View Details',
       archiveDetailsLabel: 'View Details',
-      featured: false,
-      bentoSize: 'large',
       slug: 'chillgaming',
 
       shortDescription:
@@ -252,8 +260,6 @@ window.portfolioData = {
         'Reusable centered canvas system',
         'Retro neon arcade UI',
         'Animated hero section',
-        'Infinite scrolling marquee',
-        'Global leaderboard',
         'High score persistence with LocalStorage',
         'Mobile touch controls',
         'Pause and restart systems',
@@ -330,6 +336,7 @@ window.portfolioData = {
 
       heroImage: 'assets/images/projects/chillgaming-cover.png'
     },
+    // STRATIFY: A KPI Management System
     {
       id: 'stratify-kpi-system',
       title: 'Stratify: A KPI Management System',
@@ -429,15 +436,16 @@ window.portfolioData = {
 
       heroImage: 'assets/images/projects/stratify-cover.png'
     },
+    // EXQUEST: A Text-Based RPG Adventure
     {
       id: 'exquest',
-      title: 'EXQuest',
+      title: 'EXQuest: A Text-Based RPG Adventure',
       description: 'A classic text-based RPG adventure built in Java featuring turn-based combat, exploration, inventory management, and spell casting.',
       image: 'assets/images/projects/exquest-cover.png',
       imageAlt: 'EXQuest RPG project preview',
       category: 'Game',
       filters: ['java', 'game', 'fullstack'],
-      status: ['Completed'],
+      status: ['Deployed'],
       tech: ['Java', 'Spring Boot', 'JLayer', 'HTML', 'CSS', 'JavaScript'],
       githubUrl: 'https://github.com/M3XH4/EXQuestBeta',
       detailsUrl: 'project-details.html?id=exquest',
@@ -539,72 +547,785 @@ window.portfolioData = {
 
       heroImage: 'assets/images/projects/exquest-cover.png'
     },
+    // SEAS: A School Event Attendance System
     {
-      id: 'inventory-system',
-      title: 'Inventory Operations System',
-      description: 'A practical stock, supplier, and reporting workflow for small business operations.',
-      image: 'assets/images/projects/project-backend.svg',
-      imageAlt: 'Inventory system project preview',
-      category: 'System',
-      filters: ['backend', 'fullstack'],
-      status: ['In Progress'],
-      tech: ['Node.js', 'MySQL', 'REST API'],
-      githubUrl: 'https://github.com',
-      detailsUrl: 'project-details.html?id=inventory-system',
+      id: 'seas-system',
+      title: 'SEAS: A School Event Attendance System',
+      description: 'A QR-based school event attendance system that automates attendance checking, reduces queues, and provides real-time monitoring for students, organizers, and administrators.',
+      image: 'assets/images/projects/seas-cover.png',
+      imageAlt: 'School Event Attendance System project preview',
+      category: 'Full Stack',
+      filters: ['backend', 'fullstack', 'web'],
+      status: ['In Progress', 'Case Study'],
+      tech: ['React', 'TypeScript', 'TailwindCSS', 'Laravel', 'Inertia.js', 'MySQL', 'QR Library', 'HTML5 QR Code'],
+      githubUrl: 'https://github.com/M3XH4/STI-SEAS',
+      detailsUrl: 'project-details.html?id=seas-system',
       detailsLabel: 'View Details',
-      slug: 'inventory-system',
-      shortDescription: 'A practical operations system for stock tracking, supplier workflows, and lightweight reporting.',
-      fullDescription: 'A practical system for clearer stock movement, supplier records, and reporting workflows.',
-      problem: 'Manual inventory tracking creates duplicated records and limited operational visibility.',
-      solution: 'The system uses a clean web interface backed by API endpoints and relational data modeling.',
-      technologies: ['Node.js', 'MySQL', 'REST API'],
-      features: ['Stock tracking', 'Supplier records', 'Adjustment logs', 'Reports'],
-      challenges: ['Keeping inventory adjustments auditable while making common updates quick', 'Structuring reports around decisions users actually make'],
-      learnings: ['Operational tools work best when the interface mirrors the real workflow', 'Relational modeling helps keep stock movement traceable'],
-      screenshots: [
-        { src: 'assets/images/projects/project-backend.svg', alt: 'Inventory operations system preview' }
+      slug: 'seas-system',
+      shortDescription: 'A QR-based attendance system for faster, more accurate, and paperless school event attendance tracking.',
+      fullDescription: 'SEAS is a School Event Attendance System designed to replace manual signing sheets with a secure digital QR-based attendance solution. It helps students generate dynamic QR codes, allows organizers to scan and monitor attendance in real time, and gives administrators access to records, reports, and user management tools.',
+      problem: 'Manual school event attendance causes long queues, lost or incomplete attendance sheets, fake signatures, proxy attendance, counting errors, slow validation, and difficulty accessing past records.',
+      solution: 'SEAS uses dynamic QR codes, role-based access, automatic attendance logging, real-time monitoring, and secure database storage to make event attendance faster, more accurate, organized, and paperless.',
+      technologies: ['React', 'TypeScript', 'TailwindCSS', 'Laravel', 'Inertia.js', 'MySQL', 'QR Library', 'HTML5 QR Code'],
+      features: [
+        'Official campus email login',
+        'Role-based access for students, organizers, and admins',
+        'Dynamic QR code generation with 30-second expiration',
+        'QR-based attendance scanning',
+        'Real-time attendance monitoring',
+        'Automatic attendance logging',
+        'Attendance status classification',
+        'Student attendance dashboard',
+        'Event management',
+        'Manual attendance input',
+        'Attendance reports and summaries',
+        'Multi-device compatibility'
       ],
-      github: 'https://github.com',
+      challenges: [
+        'Preventing QR code reuse, screenshots, proxy attendance, and duplicate scans',
+        'Making QR validation fast enough to avoid long queues during large school events',
+        'Designing clear role permissions for students, organizers, and administrators',
+        'Supporting manual or offline attendance input when scanning fails'
+      ],
+      learnings: [
+        'Dynamic QR codes improve security compared to fixed QR attendance systems',
+        'Real-time monitoring helps organizers manage event attendance more efficiently',
+        'Role-based access keeps system features organized and secure',
+        'Attendance systems need backup workflows for scanner, device, or internet issues'
+      ],
+      screenshots: [
+        {
+          src: 'assets/images/projects/seas-cover.png', alt: 'School Event Attendance System preview',
+
+        }
+      ],
+      github: 'https://github.com/M3XH4/STI-SEAS',
       liveDemo: '#',
       architecture: {
-        description: 'The browser UI communicates with a Node.js API backed by MySQL.',
-        diagram: '[Browser UI] -> [Node.js REST API] -> [MySQL]'
+        description: 'The web interface allows students to generate QR codes, organizers to scan attendance, and admins to manage users and records. The Laravel backend handles authentication, event records, QR validation, attendance logs, and reports using MySQL.',
+        diagram: '[Student / Organizer / Admin UI] -> [Laravel Backend] -> [MySQL Database] -> [QR Code Validation & Attendance Logs]'
       },
-      timeline: '2024 - Present',
-      role: 'Backend-focused full-stack developer.',
+      timeline: '2025 - Present',
+      role: 'Full-stack developer responsible for backend logic, database structure, QR attendance workflow, and system features.',
       platform: 'Web application',
       database: 'MySQL',
-      api: 'REST API',
-      tags: ['Inventory', 'Operations', 'Backend'],
-      thumbnail: 'assets/images/projects/project-backend.svg',
-      heroImage: 'assets/images/projects/project-backend.svg'
+      api: 'Laravel routes / web-based backend',
+      tags: ['Attendance System', 'QR Code', 'School Events', 'Laravel', 'Full Stack'],
+      thumbnail: 'assets/images/projects/seas-cover.png',
+      heroImage: 'assets/images/projects/seas-cover.png'
     },
+    // SENTRY: An IOT Smoke Detection and MQTT-Based Emergency Alert System
+    {
+      id: 'sentry-system',
+      title: 'SENTRY: An IoT Smoke Detection and MQTT-Based Emergency Alert System',
+      description:
+        'A real-time IoT-based smoke detection and emergency alert platform that uses MQTT communication, Node-RED, and a responsive monitoring dashboard for rapid incident response and environmental monitoring.',
+
+      image: 'assets/images/projects/sentry-cover.png',
+      imageAlt: 'SENTRY smoke detection dashboard preview',
+
+      category: 'IoT System',
+      filters: ['iot', 'fullstack', 'realtime'],
+
+      status: ['Deployed'],
+
+      tech: [
+        'React',
+        'TailwindCSS',
+        'Node-RED',
+        'MQTT',
+        'WebSocket',
+        'ESP32',
+        'HiveMQ',
+        'Docker',
+        'Render'
+      ],
+
+      githubUrl: 'https://github.com/M3XH4/sentry',
+      detailsUrl: 'project-details.html?id=sentry-system',
+      detailsLabel: 'View Details',
+
+      slug: 'sentry-system',
+
+      shortDescription:
+        'A real-time smoke monitoring and emergency notification system powered by IoT sensors and MQTT communication.',
+
+      fullDescription:
+        'SENTRY is an IoT-enabled smoke detection and emergency alert system designed to provide real-time environmental monitoring and rapid incident response using MQTT messaging protocols, Node-RED processing, and a responsive web dashboard.',
+
+      problem:
+        'Traditional smoke detection systems often lack centralized monitoring, real-time remote notifications, and scalable IoT integration for educational institutions and smart environments.',
+
+      solution:
+        'SENTRY integrates ESP32 smoke sensors, MQTT communication, Node-RED processing, and a responsive React dashboard to provide real-time smoke monitoring, live alerts, emergency notifications, and centralized device management.',
+
+      technologies: [
+        'React',
+        'TailwindCSS',
+        'Node-RED',
+        'MQTT',
+        'WebSocket',
+        'ESP32',
+        'HiveMQ',
+        'Docker',
+        'Render'
+      ],
+
+      features: [
+        'Real-time smoke monitoring',
+        'MQTT-based communication',
+        'WebSocket live dashboard updates',
+        'Emergency alert notifications',
+        'Device status monitoring',
+        'Responsive admin dashboard',
+        'Node-RED workflow integration',
+        'Smoke level analytics',
+        'Alert history and pagination',
+        'Automatic WebSocket reconnection'
+      ],
+
+      challenges: [
+        'Maintaining stable real-time communication between MQTT brokers, Node-RED, and the React frontend',
+        'Designing a responsive dashboard capable of handling live updates without performance degradation',
+        'Implementing reliable WebSocket reconnection and fallback states for disconnected devices',
+        'Ensuring scalable integration between IoT hardware and cloud-based deployment services'
+      ],
+
+      learnings: [
+        'MQTT provides lightweight and efficient communication for IoT systems',
+        'WebSockets are effective for live dashboard synchronization',
+        'Node-RED simplifies IoT workflow orchestration and rapid prototyping',
+        'Responsive dashboards improve monitoring accessibility across devices',
+        'Cloud deployment requires careful WebSocket and SSL configuration'
+      ],
+
+      screenshots: [
+        {
+          src: 'assets/images/projects/sentry-cover.png',
+          alt: 'SENTRY monitoring dashboard'
+        },
+        {
+          src: 'assets/images/projects/sentry-sender.png',
+          alt: 'SENTRY IoT sender device preview'
+        },
+        {
+          src: 'assets/images/projects/sentry-receiver.png',
+          alt: 'SENTRY IoT receiver device preview'
+        }
+      ],
+
+      github: 'https://github.com/M3XH4/sentry',
+      liveDemo: 'https://sentry-jk5j.onrender.com',
+
+      architecture: {
+        description:
+          'ESP32 smoke sensors publish environmental data to an MQTT broker. Node-RED processes the messages and forwards real-time updates through WebSockets to the React dashboard for live monitoring and emergency notifications.',
+
+        diagram:
+          '[ESP32 Smoke Sensors] -> [HiveMQ MQTT Broker] -> [Node-RED] -> [WebSocket] -> [React Dashboard]'
+      },
+
+      timeline: '2025',
+
+      role:
+        'Full-stack IoT developer responsible for frontend dashboard development, MQTT integration, Node-RED workflows, deployment, and system architecture.',
+
+      platform: 'Web-based IoT Monitoring System',
+
+      database: 'Optional local/cloud storage for alert logs',
+
+      api: 'MQTT + WebSocket communication',
+
+      tags: [
+        'IoT',
+        'Smoke Detection',
+        'Emergency Alerts',
+        'MQTT',
+        'Node-RED',
+        'React',
+        'ESP32',
+        'Real-Time System'
+      ],
+
+      thumbnail: 'assets/images/projects/sentry-cover.png',
+
+      heroImage: 'assets/images/projects/sentry-cover.png'
+    },
+    // ASTRA: A Zodiac Horoscope and Astrology Web Application
+    {
+      id: 'astra-application',
+      title: 'Astra: A Zodiac Horoscope and Astrology Web Application',
+      description: 'A modern astrology platform that delivers personalized horoscope readings, zodiac insights, compatibility analysis, and cosmic guidance through an immersive user experience.',
+      image: 'assets/images/projects/astra-cover.png',
+      imageAlt: 'Astra astrology web application preview',
+      category: 'Web Application',
+      filters: ['frontend', 'react', 'webapp'],
+      status: ['Deployed'],
+      tech: ['React', 'Tailwind CSS', 'JavaScript', 'API Ninjas Horoscope API', 'LocalStorage'],
+      githubUrl: 'https://github.com/M3XH4/astra',
+      detailsUrl: 'project-details.html?id=astra-application',
+      detailsLabel: 'View Details',
+      slug: 'astra-application',
+
+      shortDescription: 'A cosmic horoscope platform featuring zodiac-based predictions, compatibility insights, and personalized astrology experiences.',
+
+      fullDescription: 'Astra is a modern astrology and horoscope web application designed to provide users with daily cosmic guidance through horoscope readings, zodiac personality insights, compatibility analysis, lucky elements, and personalized astrology experiences. Built with React and Tailwind CSS, Astra combines elegant design with responsive functionality to create a premium astrology platform.',
+
+      problem: 'Many horoscope websites suffer from outdated designs, poor mobile experiences, excessive advertisements, and limited personalization, making astrology content less engaging and difficult to access.',
+
+      solution: 'Astra provides a modern, mobile-first astrology platform with a clean interface, real-time horoscope data, zodiac discovery tools, and personalized experiences using LocalStorage without requiring user accounts.',
+
+      technologies: [
+        'React',
+        'Tailwind CSS',
+        'JavaScript',
+        'API Ninjas Horoscope API',
+        'LocalStorage',
+        'Vite'
+      ],
+
+      features: [
+        'Daily horoscope readings',
+        'Birthdate-based zodiac detection',
+        'Zodiac sign explorer',
+        'Compatibility insights',
+        'Lucky number generation',
+        'Lucky color suggestions',
+        'Mood predictions',
+        'LocalStorage-based zodiac preferences',
+        'Responsive mobile-first design',
+        'Dark cosmic UI',
+        'Copy and share horoscope functionality',
+        'Animated celestial backgrounds'
+      ],
+
+      challenges: [
+        'Designing an immersive astrology experience while maintaining performance and readability',
+        'Creating a responsive dashboard that feels premium across mobile, tablet, and desktop devices',
+        'Building engaging horoscope visualizations without overwhelming the user interface',
+        'Maintaining a balance between aesthetics and accessibility'
+      ],
+
+      learnings: [
+        'Premium UI design significantly improves user engagement and retention',
+        'Animation should enhance user experience rather than distract from content',
+        'Mobile-first development simplifies responsive design implementation',
+        'LocalStorage can provide lightweight personalization without authentication systems'
+      ],
+
+      screenshots: [
+        {
+          src: 'assets/images/projects/astra-cover.png',
+          alt: 'Astra homepage dashboard'
+        },
+
+        {
+          src: 'assets/images/projects/astra-hero.png',
+          alt: 'Astra Hero interface'
+        },
+        {
+          src: 'assets/images/projects/astra-zodiac.png',
+          alt: 'Astra Horoscope card interface'
+        }
+      ],
+
+      github: 'https://github.com/M3XH4/astra',
+      liveDemo: 'https://astra-omega-ebon.vercel.app',
+
+      architecture: {
+        description: 'A React-based frontend communicates directly with the Horoscope API while LocalStorage manages user preferences and selected zodiac signs.',
+        diagram: '[React Frontend] -> [Horoscope API] | [LocalStorage for User Preferences]'
+      },
+
+      timeline: '2022',
+
+      role: 'Frontend Developer, UI/UX Designer, and System Architect',
+
+      platform: 'Responsive Web Application',
+
+      database: 'None (LocalStorage Only)',
+
+      api: 'API Ninjas Horoscope API',
+
+      tags: [
+        'Astrology',
+        'Horoscope',
+        'React',
+        'Tailwind CSS',
+        'Frontend',
+        'UI/UX',
+        'Web Application'
+      ],
+
+      thumbnail: 'assets/images/projects/astra-cover.png',
+
+      heroImage: 'assets/images/projects/astra-cover.png'
+    },
+    // GRUBHUB: A Restaurant and Cuisine Recommendation System
+    {
+      id: 'grubhub-system',
+      title: 'GrubHub: A Restaurant and Cuisine Recommendation System',
+      description: 'A location-based restaurant recommendation system that suggests dining options based on user location, budget, distance, cuisine, ratings, and availability.',
+      image: 'assets/images/projects/grubhub-cover.png',
+      imageAlt: 'GrubHub restaurant recommendation system preview',
+      category: 'Full Stack',
+      filters: ['frontend', 'backend', 'fullstack'],
+      status: ['Completed'],
+      tech: ['Laravel', 'React', 'MySQL', 'REST API', 'Google Places API'],
+      githubUrl: 'https://github.com/M3XH4/grubhub',
+      detailsUrl: 'project-details.html?id=grubhub-system',
+      detailsLabel: 'View Details',
+      slug: 'grubhub-system',
+      shortDescription: 'A smart restaurant recommendation system that helps users find places to eat based on location, budget, distance, and cuisine preferences.',
+      fullDescription: 'GrubHub is a Laravel and React-based web application designed to simplify restaurant discovery. The system asks users for their current location, preferred budget, travel distance, and cuisine type, then recommends suitable restaurants using map and place-based API data combined with a custom ranking algorithm.',
+      problem: 'Users often spend too much time deciding where to eat because restaurant choices are scattered across different platforms, budgets are unclear, and nearby options may not match their preferences.',
+      solution: 'GrubHub provides a centralized recommendation experience by collecting user preferences, retrieving nearby restaurant data, and ranking results based on distance, budget, rating, cuisine match, and open status.',
+      technologies: ['Laravel', 'React', 'MySQL', 'REST API', 'Google Places API', 'Google Maps API', 'Tailwind CSS'],
+      features: [
+        'Location-based restaurant recommendations',
+        'Budget and distance filtering',
+        'Cuisine preference selection',
+        'Best Match ranking algorithm',
+        'Restaurant cards with ratings and open status',
+        'Interactive map view',
+        'Favorites and search history',
+        'Responsive green-themed interface'
+      ],
+      challenges: [
+        'Designing a recommendation score that balances distance, budget, rating, cuisine, and availability',
+        'Handling cases where users deny location access or no nearby restaurants match the filters',
+        'Keeping external API usage efficient through caching and clean backend request handling'
+      ],
+      learnings: [
+        'Recommendation systems work better when user intent is clearly collected before showing results',
+        'Location-based apps need strong fallback states for permission errors and empty results',
+        'A clean API layer helps protect keys, manage third-party data, and keep the frontend simple'
+      ],
+      screenshots: [
+        {
+          src: 'assets/images/projects/grubhub-cover.png',
+          alt: 'GrubHub hero section preview'
+        }
+      ],
+      github: 'https://github.com/M3XH4/grubhub',
+      liveDemo: '#',
+      architecture: {
+        description: 'The React frontend collects user preferences and sends them to a Laravel REST API. The backend connects to Google Places and Maps APIs, processes restaurant data, applies ranking logic, stores useful records in MySQL, and returns sorted recommendations.',
+        diagram: '[React UI] -> [Laravel REST API] -> [Google Places/Maps API] -> [Recommendation Service] -> [MySQL]'
+      },
+      timeline: '2024',
+      role: 'Full-stack developer responsible for UI design, Laravel API development, database structure, and recommendation logic.',
+      platform: 'Web application',
+      database: 'MySQL',
+      api: 'REST API, Google Places API, Google Maps API',
+      tags: ['Restaurant', 'Food Recommendation', 'Laravel', 'React', 'Location-Based'],
+      thumbnail: 'assets/images/projects/grubhub-cover.png',
+      heroImage: 'assets/images/projects/grubhub-cover.png'
+    },
+    // ORBIT: A Real-Time Chat Application
+    {
+      id: 'orbit-application',
+      title: 'Orbit: A Real-Time Chat Application',
+      description: 'A real-time communication platform for teams, communities, and friends with instant messaging, channels, file sharing, and online presence.',
+      image: 'assets/images/projects/orbit-dashboard.png',
+      imageAlt: 'Orbit real-time chat dashboard preview',
+      category: 'Full Stack',
+      filters: ['frontend', 'backend', 'fullstack', 'realtime'],
+      status: ['In Progress'],
+      tech: ['React', 'Node.js', 'Socket.IO', 'Redis', 'PostgreSQL', 'Docker'],
+      githubUrl: 'https://github.com/M3XH4/orbit',
+      detailsUrl: 'project-details.html?id=orbit-application',
+      detailsLabel: 'View Details',
+      slug: 'orbit-application',
+      shortDescription: 'A real-time chat system with channels, direct messages, file sharing, and live user presence.',
+      fullDescription: 'Orbit is a full-stack real-time chat application inspired by Discord and Slack. It allows users to communicate through organized channels, direct messages, shared files, and live presence indicators. The system is designed with a modern React interface, WebSocket-powered messaging, scalable backend services, and Redis support for real-time event handling.',
+      problem: 'Teams and communities need a fast, organized, and reliable way to communicate in real time without losing context across conversations, files, and members.',
+      solution: 'Orbit provides a centralized communication space with real-time messaging, group channels, direct messages, file sharing, online status, and scalable WebSocket communication using Socket.IO and Redis.',
+      technologies: ['React', 'TypeScript', 'Node.js', 'Socket.IO', 'Redis', 'PostgreSQL', 'Docker'],
+      features: [
+        'Real-time messaging',
+        'Group channels',
+        'Direct messages',
+        'Online status',
+        'Typing indicators',
+        'File sharing',
+        'Message reactions',
+        'User roles and permissions'
+      ],
+      challenges: [
+        'Managing real-time socket connections reliably across multiple users and channels',
+        'Keeping message delivery fast while maintaining database consistency',
+        'Designing a clean chat interface that supports channels, members, files, and notifications',
+        'Preparing the system for scalable WebSocket communication using Redis'
+      ],
+      learnings: [
+        'Real-time systems require careful event design between the client and server',
+        'Socket.IO simplifies live communication but still needs proper authentication and room management',
+        'Redis is useful for presence tracking, caching, and scaling socket events',
+        'A chat platform works best when the UI keeps conversations, channels, and members easy to access'
+      ],
+      screenshots: [
+        { src: 'assets/images/projects/orbit-cover.png', alt: 'Orbit landing page hero section' },
+        { src: 'assets/images/projects/orbit-chat-dashboard.png', alt: 'Orbit chat dashboard interface' }
+      ],
+      github: 'https://github.com/M3XH4/orbit',
+      liveDemo: '#',
+      architecture: {
+        description: 'The React frontend communicates with a Node.js backend through REST APIs for standard requests and Socket.IO for real-time messaging. PostgreSQL stores users, channels, and messages, while Redis handles online presence, caching, and socket event scaling.',
+        diagram: '[React Client] -> [REST API + Socket.IO Server] -> [PostgreSQL]\n                         -> [Redis Pub/Sub + Presence]'
+      },
+      timeline: '2026 - Present',
+      role: 'Full-stack developer responsible for the React interface, real-time messaging flow, backend API structure, and system architecture.',
+      platform: 'Web application',
+      database: 'PostgreSQL',
+      api: 'REST API + WebSocket',
+      tags: ['Chat Application', 'Real-Time', 'WebSockets', 'Collaboration', 'Full Stack'],
+      thumbnail: 'assets/images/projects/orbit-cover.png',
+      heroImage: 'assets/images/projects/orbit-cover.png'
+    },
+    // TRADECORE: A B2B E-commerce Platform for Wholesale Operations
+    {
+      id: 'tradecore-system',
+      title: 'TradeCore: A B2B E-Commerce Platform for Wholesale Operations',
+      description: 'A scalable wholesale commerce platform designed for suppliers, distributors, and enterprise buyers to manage products, inventory, orders, and payments in one centralized system.',
+      image: 'assets/images/projects/tradecore-preview.png',
+      imageAlt: 'TradeCore wholesale e-commerce platform dashboard',
+      category: 'Software as A Service',
+      filters: ['fullstack', 'web', 'enterprise'],
+      status: ['Completed'],
+      tech: [
+        'React',
+        'Node.js',
+        'Express.js',
+        'PostgreSQL',
+        'Stripe',
+        'PayPal',
+        'REST API',
+        'Tailwind CSS'
+      ],
+      githubUrl: 'https://github.com/M3XH4/tradecore',
+      detailsUrl: 'project-details.html?id=tradecore-system',
+      detailsLabel: 'View Details',
+      slug: 'tradecore-system',
+
+      shortDescription:
+        'A complete B2B commerce platform for managing wholesale products, inventory, bulk orders, payments, and business analytics.',
+
+      fullDescription:
+        'TradeCore is a modern B2B e-commerce platform built to streamline wholesale operations. The system enables suppliers, distributors, and enterprise buyers to manage product catalogs, track inventory in real time, process bulk orders, handle secure payments through Stripe and PayPal, and gain valuable business insights through analytics dashboards.',
+
+      problem:
+        'Wholesale businesses often rely on disconnected systems for inventory management, order processing, and payment handling, resulting in inefficiencies, stock discrepancies, and limited operational visibility.',
+
+      solution:
+        'TradeCore centralizes wholesale commerce operations into a single scalable platform featuring product management, inventory tracking, order processing, payment integration, customer management, and business analytics.',
+
+      technologies: [
+        'React',
+        'Node.js',
+        'Express.js',
+        'PostgreSQL',
+        'Stripe API',
+        'PayPal API',
+        'JWT Authentication',
+        'REST API'
+      ],
+
+      features: [
+        'Product Catalog Management',
+        'Real-Time Inventory Tracking',
+        'Bulk Order Processing',
+        'Shopping Cart & Checkout',
+        'Stripe Payment Integration',
+        'PayPal Payment Integration',
+        'Admin Analytics Dashboard',
+        'Customer Management',
+        'Reviews & Ratings System',
+        'Role-Based Access Control',
+        'Order Tracking',
+        'Sales & Inventory Reports'
+      ],
+
+      challenges: [
+        'Designing a scalable architecture capable of supporting thousands of products and concurrent users',
+        'Maintaining inventory consistency during simultaneous order transactions',
+        'Integrating multiple payment gateways while ensuring transaction security',
+        'Building efficient reporting and analytics modules for operational decision-making'
+      ],
+
+      learnings: [
+        'Enterprise commerce systems require strong database design and transaction management',
+        'Payment integrations demand careful handling of security and compliance requirements',
+        'Scalable architecture begins with modular system design and API separation',
+        'Real-time inventory tracking is critical for wholesale operations'
+      ],
+
+      screenshots: [
+        {
+          src: 'assets/images/projects/tradecore-cover.png',
+          alt: 'TradeCore hero section overview'
+        },
+      ],
+
+      github: 'https://github.com/M3XH4/tradecore',
+      liveDemo: '#',
+
+      architecture: {
+        description:
+          'The frontend communicates with a RESTful API layer that manages authentication, inventory, orders, and payments. Data is stored in PostgreSQL while Stripe and PayPal handle secure payment processing.',
+        diagram:
+          '[React Frontend] → [Node.js / Express API] → [PostgreSQL Database] → [Stripe & PayPal APIs]'
+      },
+
+      timeline: '2025 - 2026',
+
+      role:
+        'Full-Stack Developer responsible for system architecture, backend development, database design, API development, frontend implementation, and payment gateway integration.',
+
+      platform: 'Web Application',
+
+      database: 'PostgreSQL',
+
+      api: 'REST API',
+
+      tags: [
+        'B2B',
+        'E-Commerce',
+        'Wholesale',
+        'Inventory Management',
+        'Payments',
+        'Enterprise',
+        'Full Stack'
+      ],
+
+      thumbnail: 'assets/images/projects/tradecore-cover.png',
+
+      heroImage: 'assets/images/projects/tradecore-cover.png'
+    },
+    // MEDCORE: A Smart Hospital Management System
+    {
+      id: 'medcore-system',
+      title: 'MedCore: A Smart Hospital Management System',
+      description: 'An AI-powered hospital management platform that streamlines patient care, clinical workflows, appointment scheduling, billing, and emergency response operations.',
+      image: 'assets/images/projects/medcore-cover.png',
+      imageAlt: 'MedCore hospital management system dashboard preview',
+      category: 'Software as A Service',
+      filters: ['fullstack', 'healthcare', 'ai'],
+      status: ['In Progress'],
+      tech: [
+        'Next.js',
+        'Laravel',
+        'PostgreSQL',
+        'TailwindCSS',
+        'FastAPI',
+        'Python',
+        'Redis'
+      ],
+      githubUrl: 'https://github.com/M3XH4/medcore',
+      detailsUrl: 'project-details.html?id=medcore-system',
+      detailsLabel: 'View Details',
+      slug: 'medcore-system',
+
+      shortDescription:
+        'A smart healthcare platform that centralizes patient records, appointments, billing, prescriptions, and AI-assisted clinical workflows.',
+
+      fullDescription:
+        'MedCore is a modern hospital management system designed to digitize healthcare operations through centralized patient records, appointment scheduling, emergency management, billing, e-prescriptions, and AI-powered healthcare assistance. The platform aims to improve patient outcomes, optimize hospital workflows, and support medical professionals with intelligent decision-making tools.',
+
+      problem:
+        'Many healthcare facilities still rely on fragmented systems, manual processes, and paper-based records, leading to inefficiencies, delayed care, data duplication, and limited operational visibility.',
+
+      solution:
+        'MedCore provides an integrated healthcare ecosystem that combines hospital administration, patient management, emergency response, billing, and AI-powered clinical support into a single secure platform.',
+
+      technologies: [
+        'Next.js',
+        'Laravel',
+        'PostgreSQL',
+        'FastAPI',
+        'Python',
+        'Redis',
+        'TailwindCSS',
+        'Docker'
+      ],
+
+      features: [
+        'Electronic Medical Records (EMR)',
+        'Appointment Scheduling System',
+        'Doctor Dashboard',
+        'Prescription Management',
+        'Billing & Payment Processing',
+        'Emergency Queue Management',
+        'AI Triage Assistant',
+        'Disease Prediction Module',
+        'SMS & Email Notifications',
+        'Role-Based Access Control'
+      ],
+
+      challenges: [
+        'Designing a scalable healthcare database while maintaining data integrity and security',
+        'Implementing role-based access control for multiple healthcare stakeholders',
+        'Integrating AI-powered triage and disease prediction modules into clinical workflows',
+        'Managing real-time emergency queue prioritization and notifications'
+      ],
+
+      learnings: [
+        'Healthcare systems require strict security, privacy, and auditability standards',
+        'Well-designed workflows significantly improve hospital efficiency and patient experience',
+        'AI should assist healthcare professionals rather than replace clinical judgment',
+        'Modular architecture improves maintainability and future scalability'
+      ],
+
+      screenshots: [
+        {
+          src: 'assets/images/projects/medcore-cover.png',
+          alt: 'MedCore dashboard overview'
+        },
+      ],
+
+      github: 'https://github.com/M3XH4/medcore',
+      liveDemo: '#',
+
+      architecture: {
+        description:
+          'The Next.js frontend communicates with a Laravel REST API backed by PostgreSQL, Redis, and AI microservices built with FastAPI.',
+        diagram: `
+            [Next.js Frontend]
+                      |
+                      ▼
+                [Laravel API]
+                      |
+            ┌────────┼────────┐
+            ▼        ▼        ▼
+            [PostgreSQL] [Redis] [FastAPI AI]
+            `
+      },
+
+      timeline: '2026 - Present',
+
+      role:
+        'Full-Stack Software Engineer responsible for system architecture, frontend development, backend API development, database design, and AI integration.',
+
+      platform: 'Web Application',
+
+      database: 'PostgreSQL',
+
+      api: 'REST API',
+
+      tags: [
+        'Healthcare',
+        'Hospital Management',
+        'AI',
+        'Laravel',
+        'Next.js',
+        'FastAPI',
+        'Full Stack'
+      ],
+
+      thumbnail: 'assets/images/projects/medcore-cover.png',
+
+      heroImage: 'assets/images/projects/medcore-cover.png'
+    },
+    // RESTOCORE: A Full-Stack Restaurant Management and Point-of-Sale System
+    {
+      id: 'restocore-system',
+      title: 'RestoCore: A Full-Stack Restaurant Management and Point-of-Sale System',
+      description: 'A modern restaurant operations platform for managing orders, tables, kitchen workflows, reservations, inventory, staff, payments, and sales analytics.',
+      image: 'assets/images/projects/restocore-cover.png',
+      imageAlt: 'RestoCore restaurant management system preview',
+      category: 'Software as a Service',
+      filters: ['frontend', 'backend', 'fullstack'],
+      status: ['Completed'],
+      tech: ['React', 'Laravel', 'PostgreSQL', 'REST API'],
+      githubUrl: 'https://github.com/M3XH4/restocore',
+      detailsUrl: 'project-details.html?id=restocore-system',
+      detailsLabel: 'View Details',
+      slug: 'restocore-system',
+
+      shortDescription: 'A full-stack restaurant management and POS system for streamlining orders, kitchen operations, reservations, inventory, and reporting.',
+
+      fullDescription: 'RestoCore is a full-stack web-based restaurant management and point-of-sale system designed to help restaurants manage their daily operations through one centralized platform. It supports order processing, table management, kitchen display workflows, menu administration, reservation scheduling, inventory monitoring, staff management, billing, and business analytics.',
+
+      problem: 'Many restaurants still rely on manual order taking, disconnected inventory records, paper-based reservations, and separate billing workflows. This creates delays, order mistakes, poor stock visibility, and limited access to real-time business insights.',
+
+      solution: 'RestoCore provides an integrated web platform powered by React, Laravel, and PostgreSQL. The system connects front-of-house, kitchen, cashier, inventory, and management workflows through a clean user interface, RESTful API endpoints, relational data modeling, and role-based access control.',
+
+      technologies: ['React', 'Laravel', 'PostgreSQL', 'REST API', 'Tailwind CSS', 'Laravel Sanctum'],
+
+      features: [
+        'Point-of-sale order processing',
+        'Menu and category management',
+        'Real-time order tracking',
+        'Kitchen display system',
+        'Table management',
+        'Reservation scheduling',
+        'Inventory monitoring',
+        'Low-stock alerts',
+        'Staff and role management',
+        'Billing and payment tracking',
+        'Sales reports and analytics',
+        'Audit logs'
+      ],
+
+      challenges: [
+        'Designing a clean workflow that connects waiters, cashiers, kitchen staff, and managers without making the interface complicated',
+        'Structuring relational database tables for orders, order items, menu items, tables, payments, reservations, and inventory records',
+        'Keeping order status updates clear and traceable across the restaurant workflow',
+        'Planning inventory deduction logic based on menu item usage and stock movement',
+        'Creating reports that provide useful business decisions instead of only displaying raw data'
+      ],
+
+      learnings: [
+        'Restaurant systems need to follow the real operational flow from menu selection to order preparation, billing, and reporting',
+        'Role-based access control is important for protecting sensitive actions such as discounts, voided orders, reports, and user management',
+        'A well-designed PostgreSQL schema helps keep orders, payments, reservations, and inventory records consistent',
+        'Dashboard analytics become more useful when they focus on daily sales, active tables, best-selling items, pending orders, and low-stock items',
+        'Building the system in phases makes the project easier to test, maintain, and scale'
+      ],
+
+      screenshots: [
+        {
+          src: 'assets/images/projects/restocore-cover.png',
+          alt: 'RestoCore hero section preview'
+        },
+      ],
+
+      github: 'https://github.com/M3XH4/restocore',
+      liveDemo: '#',
+
+      architecture: {
+        description: 'The React frontend communicates with a Laravel REST API, while PostgreSQL stores restaurant data such as users, menu items, orders, tables, reservations, payments, inventory records, and reports.',
+        diagram: '[React Frontend] -> [Laravel REST API] -> [PostgreSQL Database]'
+      },
+
+      timeline: '2025',
+      role: 'Full-stack developer responsible for system planning, UI design, database modeling, API development, and feature implementation.',
+      platform: 'Web application',
+      database: 'PostgreSQL',
+      api: 'REST API',
+
+      tags: [
+        'Restaurant Management',
+        'Point of Sale',
+        'Kitchen Display',
+        'Inventory',
+        'Reservations',
+        'Analytics',
+        'Full Stack'
+      ],
+
+      thumbnail: 'assets/images/projects/restocore-cover.png',
+      heroImage: 'assets/images/projects/restocore-cover.png'
+    }
   ],
 
   certificates: [
-    {
-      title: 'Java Fundamentals',
-      issuer: 'Oracle Academy',
-      year: '2024',
-      image: 'assets/images/certificates/java-fundamentals.jpg',
-      category: 'Programming',
-      description: 'Java programming fundamentals and object-oriented development concepts.'
-    },
     {
       title: 'Copilot CDO: AI-Powered Coding For Everyone',
       issuer: 'DevCon CDO',
       year: '2025',
       image: 'assets/images/certificates/copilot-cdo-ai.png',
       category: 'AI Coding',
-      description: 'Practical introduction to AI-assisted software development workflows.'
-    },
-    {
-      title: 'Git Mastery: Basic to Beyond',
-      issuer: 'DevCon CDO',
-      year: '2024',
-      image: 'assets/images/certificates/git-mastery.png',
-      category: 'Developer Tools',
-      description: 'Git fundamentals, collaboration workflows, and version control practice.'
     },
     {
       title: 'SAP X Accenture: Student Career Talk',
@@ -612,16 +1333,36 @@ window.portfolioData = {
       year: '2025',
       image: 'assets/images/certificates/sap-x-accenture.jpg',
       category: 'Career',
-      description: 'Industry career session for technology students and emerging professionals.'
     },
+    {
+      title: 'Agri Tech Innovate: Ideation Workshop in Northern Mindanao',
+      issuer: 'Department of Agriculture - Agricultural Training Institute',
+      year: '2025',
+      image: 'assets/images/certificates/agri-tech-innovate.jpg',
+      category: 'Hackathon',
+    },
+    {
+      title: 'Git Mastery: Basic to Beyond',
+      issuer: 'DevCon CDO',
+      year: '2024',
+      image: 'assets/images/certificates/git-mastery.png',
+      category: 'Developer Tools',
+    },
+    {
+      title: 'Java Fundamentals',
+      issuer: 'Oracle Academy',
+      year: '2024',
+      image: 'assets/images/certificates/java-fundamentals.jpg',
+      category: 'Programming',
+    },
+    
     {
       title: 'Bridging Gaps - Java Tutorials',
       issuer: 'Google Developer Student Clubs',
       year: '2022',
       image: 'assets/images/certificates/bridging-gaps.jpg',
       category: 'Programming',
-      description: 'Introductory Java tutorial and student developer learning session.'
-    }
+    },
   ],
 
   skillCategories: [
@@ -764,3 +1505,166 @@ window.portfolioData = {
     }
   ]
 };
+
+window.portfolioData.projectActionTypes = {
+  github: { label: 'GitHub Code', style: 'btn-outline', external: true },
+  liveDemo: { label: 'Live Demo', style: 'btn-primary', external: true },
+  documentation: { label: 'Documentation', style: 'btn-secondary', external: true },
+  apk: { label: 'APK Download', style: 'btn-secondary', external: true },
+  app: { label: 'App Download', style: 'btn-secondary', external: true },
+  details: { label: 'View Details', style: 'btn-secondary', external: false },
+  caseStudy: { label: 'Case Study', style: 'btn-secondary', external: false },
+  playStore: { label: 'Play Store', style: 'btn-secondary', external: true },
+  website: { label: 'Website', style: 'btn-primary', external: true },
+  apiDocs: { label: 'API Docs', style: 'btn-secondary', external: true },
+  figma: { label: 'Figma Design', style: 'btn-secondary', external: true },
+  presentation: { label: 'Presentation', style: 'btn-secondary', external: true },
+  whitepaper: { label: 'Whitepaper', style: 'btn-secondary', external: true }
+};
+
+window.portfolioData.projectStatusTypes = {
+  completed: 'Completed',
+  inProgress: 'In Progress',
+  experimental: 'Experimental',
+  caseStudy: 'Case Study',
+  upcoming: 'Upcoming',
+  backlogged: 'Backlogged',
+  deployed: 'Deployed'
+};
+
+(function normalizePortfolioData(data) {
+  if (!data || !Array.isArray(data.projects)) return;
+
+  const actionTypes = data.projectActionTypes || {};
+
+  const isUsableUrl = (url) => Boolean(url && url !== '#');
+  const getProjectDetailsUrl = (project) => {
+    const slug = project.slug || project.id;
+    return project.detailsUrl || `project-details.html?id=${encodeURIComponent(slug)}`;
+  };
+
+  const normalizeAction = (action, project) => {
+    if (!action || !action.url || action.url === '#') return null;
+    const type = action.type || 'website';
+    const defaults = actionTypes[type] || {};
+    return {
+      type,
+      label: action.label || defaults.label || 'Open Link',
+      url: action.url,
+      style: action.style || defaults.style || 'btn-secondary',
+      external: action.external ?? defaults.external ?? !action.url.startsWith('project-details.html'),
+      ariaLabel: action.ariaLabel || `${action.label || defaults.label || 'Open link'} for ${project.title}`
+    };
+  };
+
+  const uniqueActions = (actions) => {
+    const seen = new Set();
+    return actions.filter((action) => {
+      if (!action) return false;
+      const key = `${action.type}:${action.url}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  };
+
+  data.projects = data.projects.map((project) => {
+    const slug = project.slug || project.id;
+    const detailsUrl = getProjectDetailsUrl(project);
+    const media = {
+      thumbnail: {
+        src: project.media?.thumbnail?.src || project.thumbnail || project.image,
+        alt: project.media?.thumbnail?.alt || project.imageAlt || `${project.title} project preview`
+      },
+      hero: {
+        src: project.media?.hero?.src || project.heroImage || project.thumbnail || project.image,
+        alt: project.media?.hero?.alt || project.imageAlt || `${project.title} project hero preview`
+      },
+      screenshots: (project.media?.screenshots || project.screenshots || [])
+        .map((screenshot) => (typeof screenshot === 'string'
+          ? { src: screenshot, alt: `${project.title} screenshot` }
+          : { src: screenshot.src, alt: screenshot.alt || `${project.title} screenshot` }))
+        .filter((screenshot) => Boolean(screenshot.src))
+    };
+
+    const legacyActions = [
+      normalizeAction({ type: 'github', url: project.github || project.githubUrl }, project),
+      normalizeAction({ type: 'liveDemo', url: project.liveDemo || project.liveDemoUrl }, project),
+      normalizeAction({ type: 'documentation', url: project.documentationUrl }, project),
+      normalizeAction({ type: 'app', url: project.appUrl }, project),
+      normalizeAction({ type: 'apk', url: project.apkUrl }, project),
+      normalizeAction({ type: 'playStore', url: project.playStoreUrl }, project),
+      normalizeAction({ type: 'website', url: project.websiteUrl }, project),
+      normalizeAction({ type: 'apiDocs', url: project.apiDocsUrl }, project),
+      normalizeAction({ type: 'figma', url: project.figmaUrl }, project),
+      normalizeAction({ type: 'presentation', url: project.presentationUrl }, project),
+      normalizeAction({ type: 'whitepaper', url: project.whitepaperUrl }, project)
+    ];
+
+    const explicitActions = (project.actions || [])
+      .map((action) => normalizeAction(action, project));
+
+    const detailsType = String(project.detailsLabel || '').toLowerCase().includes('case') ? 'caseStudy' : 'details';
+    const detailAction = normalizeAction({
+      type: detailsType,
+      label: project.detailsLabel || actionTypes[detailsType]?.label || 'View Details',
+      url: detailsUrl,
+      external: false
+    }, project);
+
+    const normalizedProject = {
+      ...project,
+      slug,
+      detailsUrl,
+      media,
+      technologies: project.technologies || project.tech || [],
+      actions: uniqueActions([...explicitActions, ...legacyActions, detailAction])
+    };
+
+    [
+      'github',
+      'githubUrl',
+      'liveDemo',
+      'liveDemoUrl',
+      'documentationUrl',
+      'appUrl',
+      'apkUrl',
+      'playStoreUrl',
+      'websiteUrl',
+      'apiDocsUrl',
+      'figmaUrl',
+      'presentationUrl',
+      'whitepaperUrl',
+      'image',
+      'imageAlt',
+      'thumbnail',
+      'heroImage',
+      'screenshots',
+      'tech'
+    ].forEach((field) => {
+      delete normalizedProject[field];
+    });
+
+    return normalizedProject;
+  });
+
+  window.portfolioUtils = {
+    getProjectDetailsUrl,
+    getProjectMedia: (project) => project.media || {},
+    getProjectActions: (project, context = 'card') => {
+      const actions = Array.isArray(project.actions) ? project.actions : [];
+      if (context === 'details') {
+        return actions.filter((action) => action.type !== 'details' && action.type !== 'caseStudy');
+      }
+
+      const githubAction = actions.find((action) => action.type === 'github');
+      const detailAction = actions.find((action) => action.type === 'details' || action.type === 'caseStudy');
+
+      return [
+        githubAction ? { ...githubAction, label: 'GitHub', style: 'btn-outline' } : null,
+        detailAction ? { ...detailAction, label: 'View Details', style: 'btn-secondary' } : null
+      ].filter(Boolean);
+    },
+    isUsableUrl
+  };
+})(window.portfolioData);

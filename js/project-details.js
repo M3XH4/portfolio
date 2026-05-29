@@ -90,41 +90,32 @@ function renderProjectHero(project) {
 }
 
 function renderHeroImage(project) {
-  const src = project.heroImage || project.thumbnail || project.image;
+  const media = getProjectMedia(project);
+  const hero = media.hero || {};
+  const src = hero.src || project.heroImage || project.thumbnail || project.image;
   if (!src) return '';
 
   return `
     <div class="card detail-hero-image-card reveal">
-      <img src="${escapeAttr(src)}" alt="${escapeAttr(project.imageAlt || `${project.title} project preview`)}" class="detail-hero-image">
+      <img src="${escapeAttr(src)}" alt="${escapeAttr(hero.alt || project.imageAlt || `${project.title} project preview`)}" class="detail-hero-image">
     </div>
   `;
 }
 
 function renderButtons(project) {
-  const github = project.github || project.githubUrl;
-  const liveDemo = project.liveDemo || project.liveDemoUrl;
-  const buttons = [];
-
-  if (github) {
-    buttons.push(`<a href="${escapeAttr(github)}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub Code</a>`);
-  }
-
-  if (liveDemo && liveDemo !== '#') {
-    buttons.push(`<a href="${escapeAttr(liveDemo)}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Live Demo</a>`);
-  }
-
-  if (!buttons.length) return '';
+  const actions = getProjectActions(project, 'details');
+  if (!actions.length) return '';
 
   return `
     <aside class="card details-side-card reveal" aria-labelledby="links-title">
       <h2 class="details-side-title" id="links-title">Codebase & Links</h2>
-      <div class="details-link-actions">${buttons.join('')}</div>
+      ${renderProjectActions(actions, 'details-link-actions')}
     </aside>
   `;
 }
 
 function renderGallery(project) {
-  const screenshots = normalizeScreenshots(project.screenshots);
+  const screenshots = normalizeScreenshots(getProjectMedia(project).screenshots || project.screenshots);
   if (!screenshots.length) return '';
 
   return `
@@ -280,7 +271,7 @@ function renderProjectNavigation(project) {
 }
 
 function renderGalleryModal(project) {
-  const screenshots = normalizeScreenshots(project.screenshots);
+  const screenshots = normalizeScreenshots(getProjectMedia(project).screenshots || project.screenshots);
   if (!screenshots.length) return '';
 
   const hasMultiple = screenshots.length > 1;
@@ -306,7 +297,7 @@ function renderGalleryModal(project) {
 }
 
 function setupProjectGallery(project) {
-  const screenshots = normalizeScreenshots(project.screenshots);
+  const screenshots = normalizeScreenshots(getProjectMedia(project).screenshots || project.screenshots);
   const modal = document.getElementById('projectGalleryModal');
   if (!modal || !screenshots.length) return;
 
@@ -390,7 +381,61 @@ function getSummary(project) {
 }
 
 function getProjectDetailsUrl(project) {
+  if (window.portfolioUtils?.getProjectDetailsUrl) {
+    return window.portfolioUtils.getProjectDetailsUrl(project);
+  }
+
   return project.detailsUrl || `project-details.html?id=${encodeURIComponent(project.slug || project.id)}`;
+}
+
+function getProjectMedia(project) {
+  if (window.portfolioUtils?.getProjectMedia) {
+    return window.portfolioUtils.getProjectMedia(project);
+  }
+
+  return {
+    hero: {
+      src: project.heroImage || project.thumbnail || project.image,
+      alt: project.imageAlt || `${project.title} project preview`
+    },
+    screenshots: project.screenshots || []
+  };
+}
+
+function getProjectActions(project, context) {
+  if (window.portfolioUtils?.getProjectActions) {
+    return window.portfolioUtils.getProjectActions(project, context);
+  }
+
+  const actions = [];
+  if (project.github || project.githubUrl) {
+    actions.push({ label: 'GitHub Code', url: project.github || project.githubUrl, style: 'btn-outline', external: true });
+  }
+  if ((project.liveDemo || project.liveDemoUrl) && (project.liveDemo || project.liveDemoUrl) !== '#') {
+    actions.push({ label: 'Live Demo', url: project.liveDemo || project.liveDemoUrl, style: 'btn-primary', external: true });
+  }
+  if ((project.linkUrl) && (project.linkUrl) !== '#') {
+    actions.push({ label: 'Project Link', url: project.linkUrl, style: 'btn-secondary', external: true });
+  }
+  if ((project.appUrl) && (project.appUrl) !== '#') {
+    actions.push({ label: 'Download App', url: project.appUrl, style: 'btn-secondary', external: true });
+  }
+  return actions;
+}
+
+function renderProjectActions(actions, className) {
+  const visibleActions = (actions || []).filter(action => action?.url && action.url !== '#');
+  if (!visibleActions.length) return '';
+
+  const count = Math.min(visibleActions.length, 3);
+  return `
+    <div class="${escapeAttr(className)} project-actions-dynamic project-actions-count-${count}">
+      ${visibleActions.map(action => {
+        const externalAttrs = action.external ? ' target="_blank" rel="noopener noreferrer"' : '';
+        return `<a href="${escapeAttr(action.url)}" class="btn ${escapeAttr(action.style || 'btn-secondary')}"${externalAttrs} aria-label="${escapeAttr(action.ariaLabel || action.label)}">${escapeHtml(action.label)}</a>`;
+      }).join('')}
+    </div>
+  `;
 }
 
 function normalizeScreenshots(screenshots) {
@@ -414,11 +459,15 @@ function arrayFrom(value) {
 }
 
 function statusBadgeClass(status) {
-  const normalized = String(status).toLowerCase();
+  const normalized = String(status).toLowerCase().replace(/[_-]+/g, ' ').trim();
+  if (normalized.includes('deployed') || normalized.includes('production')) return 'badge-deployed';
+  if (normalized.includes('upcoming') || normalized.includes('planned') || normalized.includes('future')) return 'badge-upcoming';
+  if (normalized.includes('backlog') || normalized.includes('pending')) return 'badge-backlogged';
+  if (normalized.includes('completed') || normalized.includes('complete') || normalized.includes('done')) return 'badge-completed';
   if (normalized.includes('progress')) return 'badge-progress';
   if (normalized.includes('experimental')) return 'badge-experimental';
   if (normalized.includes('case')) return 'badge-case-study';
-  return 'badge-completed';
+  return 'badge-status';
 }
 
 function formatLabel(value) {

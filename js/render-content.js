@@ -115,27 +115,29 @@ function projectCard(project, options) {
   const cardSize = !isArchive && project.bentoSize ? ` project-card-${project.bentoSize}` : '';
   const cardClass = `card project-card${cardSize} reveal${delayClass(options.delay)}`;
   const description = isArchive ? (project.archiveDescription || project.description) : project.description;
-  const tech = isArchive && project.archiveTech ? project.archiveTech : project.tech;
-  const detailsLabel = isArchive ? (project.archiveDetailsLabel || project.detailsLabel || 'View Details') : (project.detailsLabel || 'View Details');
+  const tech = isArchive && project.archiveTech ? project.archiveTech : (project.technologies || project.tech);
+  const media = getProjectMedia(project);
+  const thumbnail = media.thumbnail || {};
+  const detailsUrl = getProjectDetailsUrl(project);
+  const actions = getProjectActions(project, 'card');
   const card = `
     <article class="${cardClass}">
       <div class="project-image-wrapper">
         <div class="project-badges">
-          <span class="badge badge-category">${escapeHtml(project.category)}</span>
+          ${project.category ? `<span class="badge badge-category">${escapeHtml(project.category)}</span>` : ''}
           ${(project.status || []).map(status => `<span class="badge ${statusBadgeClass(status)}">${escapeHtml(status)}</span>`).join('')}
         </div>
-        <img src="${escapeAttr(project.image)}" alt="${escapeAttr(project.imageAlt || `${project.title} project preview`)}" class="project-image">
+        <img src="${escapeAttr(thumbnail.src || project.image || '')}" alt="${escapeAttr(thumbnail.alt || project.imageAlt || `${project.title} project preview`)}" class="project-image">
       </div>
       <div class="project-content">
-        <h3 class="project-title">${escapeHtml(project.title)}</h3>
+        <h3 class="project-title">
+          <a href="${escapeAttr(detailsUrl)}" class="project-title-link">${escapeHtml(project.title)}</a>
+        </h3>
         <p class="project-desc">${escapeHtml(description || '')}</p>
         <div class="project-tech">
           ${(tech || []).map(item => `<span class="tech-tag">${escapeHtml(item)}</span>`).join('')}
         </div>
-        <div class="project-actions">
-          <a href="${escapeAttr(project.githubUrl || 'https://github.com')}" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub</a>
-          <a href="${escapeAttr(project.detailsUrl || '#')}" class="btn btn-secondary">${escapeHtml(detailsLabel)}</a>
-        </div>
+        ${renderProjectActions(actions, 'project-actions')}
       </div>
     </article>
   `;
@@ -174,11 +176,73 @@ function certificateCard(certificate, index) {
 }
 
 function statusBadgeClass(status) {
-  const normalized = String(status).toLowerCase();
+  const normalized = String(status).toLowerCase().replace(/[_-]+/g, ' ').trim();
+  if (normalized.includes('deployed') || normalized.includes('production')) return 'badge-deployed';
+  if (normalized.includes('upcoming') || normalized.includes('planned') || normalized.includes('future')) return 'badge-upcoming';
+  if (normalized.includes('backlog') || normalized.includes('pending')) return 'badge-backlogged';
+  if (normalized.includes('completed') || normalized.includes('complete') || normalized.includes('done')) return 'badge-completed';
   if (normalized.includes('progress')) return 'badge-progress';
   if (normalized.includes('experimental')) return 'badge-experimental';
   if (normalized.includes('case')) return 'badge-case-study';
-  return 'badge-completed';
+  return 'badge-status';
+}
+
+function getProjectMedia(project) {
+  if (window.portfolioUtils?.getProjectMedia) {
+    return window.portfolioUtils.getProjectMedia(project);
+  }
+
+  return {
+    thumbnail: {
+      src: project.thumbnail || project.image,
+      alt: project.imageAlt || `${project.title} project preview`
+    }
+  };
+}
+
+function getProjectDetailsUrl(project) {
+  if (window.portfolioUtils?.getProjectDetailsUrl) {
+    return window.portfolioUtils.getProjectDetailsUrl(project);
+  }
+
+  return project.detailsUrl || `project-details.html?id=${encodeURIComponent(project.slug || project.id)}`;
+}
+
+function getProjectActions(project, context) {
+  if (window.portfolioUtils?.getProjectActions) {
+    return window.portfolioUtils.getProjectActions(project, context);
+  }
+
+  const actions = [];
+  if (project.github || project.githubUrl) {
+    actions.push({ label: 'GitHub Code', url: project.github || project.githubUrl, style: 'btn-outline', external: true });
+  }
+  if ((project.liveDemo || project.liveDemoUrl) && (project.liveDemo || project.liveDemoUrl) !== '#') {
+    actions.push({ label: 'Live Demo', url: project.liveDemo || project.liveDemoUrl, style: 'btn-primary', external: true });
+  }
+  if ((project.linkUrl) && (project.linkUrl) !== '#') {
+    actions.push({ label: 'Project Link', url: project.linkUrl, style: 'btn-secondary', external: true });
+  }
+  if ((project.appUrl) && (project.appUrl) !== '#') {
+    actions.push({ label: 'Download App', url: project.appUrl, style: 'btn-secondary', external: true });
+  }
+  actions.push({ label: project.detailsLabel || 'View Details', url: getProjectDetailsUrl(project), style: 'btn-secondary', external: false });
+  return actions;
+}
+
+function renderProjectActions(actions, className = 'project-actions') {
+  const visibleActions = (actions || []).filter(action => action?.url && action.url !== '#');
+  if (!visibleActions.length) return '';
+
+  const count = Math.min(visibleActions.length, 3);
+  return `
+    <div class="${escapeAttr(className)} project-actions-count-${count}">
+      ${visibleActions.map(action => {
+        const externalAttrs = action.external ? ' target="_blank" rel="noopener noreferrer"' : '';
+        return `<a href="${escapeAttr(action.url)}" class="btn ${escapeAttr(action.style || 'btn-secondary')}"${externalAttrs} aria-label="${escapeAttr(action.ariaLabel || action.label)}">${escapeHtml(action.label)}</a>`;
+      }).join('')}
+    </div>
+  `;
 }
 
 function delayClass(index) {

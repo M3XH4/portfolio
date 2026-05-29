@@ -35,7 +35,9 @@
   --status-progress: #f59e0b;
   --status-experimental: #8b5cf6;
   --status-case-study: #3b82f6;
-
+  --status-deployed: #6ad5ff;
+  --status-upcoming: #8b5cf6;
+  --status-backlogged: #ff6c6c;
   /* Shadows (Dark Default placeholders, updated below) */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
