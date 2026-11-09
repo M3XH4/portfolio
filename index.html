@@ -115,7 +115,7 @@
               systems that solve clear user and business problems without unnecessary complexity.</p>
             <div class="hero-actions" aria-label="Primary actions">
               <a href="#projects" class="btn btn-primary">View Projects</a>
-              <a href="assets/documents/resume-placeholder.txt" class="btn btn-outline" download
+              <a href="assets/documents/Sean_Benedict_Malferrari_Resume.pdf" class="btn btn-outline" download="Sean_Benedict_Malferrari_Resume.pdf"
                 aria-label="Download resume">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                   aria-hidden="true">
@@ -143,7 +143,7 @@
                   <rect x="2" y="9" width="4" height="12"></rect>
                   <circle cx="4" cy="4" r="2"></circle>
                 </svg></a>
-              <a href="mailto:hello@example.com" class="btn-icon" aria-label="Email Me"><svg width="20" height="20"
+              <a href="mailto:sbmalferrari@gmail.com" class="btn-icon" aria-label="Email Me"><svg width="20" height="20"
                   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                   <polyline points="22,6 12,13 2,6"></polyline>
@@ -661,13 +661,13 @@
               <p>Have an app idea, backend challenge, or portfolio-worthy system to improve? Send the details and I will
                 respond with a practical next step.</p>
               <div class="contact-methods">
-                <a href="mailto:hello@example.com" class="contact-method"><span class="btn-icon" aria-hidden="true"><svg
+                <a href="mailto:sbmalferrari@gmail.com" class="contact-method"><span class="btn-icon" aria-hidden="true"><svg
                       viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                       <polyline points="22,6 12,13 2,6"></polyline>
                     </svg></span><span><span class="contact-method-label">Email: </span><span
                       class="contact-method-value">sbmalferrari@gmail.com</span></span></a>
-                <a href="tel:+1234567890" class="contact-method"><span class="btn-icon" aria-hidden="true"><svg
+                <a href="tel:+639672060194" class="contact-method"><span class="btn-icon" aria-hidden="true"><svg
                       viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <path
                         d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 19 19.5 19.5 0 0 1 5.19 13 19.79 19.79 0 0 1 2.27 4.37 2 2 0 0 1 4.26 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z">
@@ -676,14 +676,16 @@
                       class="contact-method-value">+63 967 2060 194</span></span></a>
               </div>
             </div>
-            <form class="contact-form" id="portfolioContactForm" novalidate>
-              <div class="form-group"><label for="formName">Name</label><input type="text" id="formName"
+            <form class="contact-form" id="portfolioContactForm" action="https://formsubmit.co/sbmalferrari@gmail.com" method="POST">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <div class="form-group"><label for="formName">Name</label><input type="text" id="formName" name="name"
                   class="form-control" placeholder="Your Name" required></div>
-              <div class="form-group"><label for="formEmail">Email Address</label><input type="email" id="formEmail"
+              <div class="form-group"><label for="formEmail">Email Address</label><input type="email" id="formEmail" name="email"
                   class="form-control" placeholder="your@email.com" required></div>
-              <div class="form-group"><label for="formSubject">Subject</label><input type="text" id="formSubject"
+              <div class="form-group"><label for="formSubject">Subject</label><input type="text" id="formSubject" name="_subject"
                   class="form-control" placeholder="Project details / Job role" required></div>
-              <div class="form-group"><label for="formMessage">Message</label><textarea id="formMessage"
+              <div class="form-group"><label for="formMessage">Message</label><textarea id="formMessage" name="message"
                   class="form-control" placeholder="What are we building?" required></textarea></div>
               <button type="submit" class="btn btn-primary">Send Message</button>
             </form>

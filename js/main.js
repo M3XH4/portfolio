@@ -5,47 +5,96 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const contactForm = document.getElementById('portfolioContactForm');
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    const inputs = contactForm.querySelectorAll('.form-control');
+    inputs.forEach(input => {
+      input.addEventListener('input', () => {
+        input.style.borderColor = '';
+      });
+    });
+
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalBtnText = submitBtn.innerHTML;
       
+      const nameInput = document.getElementById('formName');
+      const emailInput = document.getElementById('formEmail');
+      const subjectInput = document.getElementById('formSubject');
+      const messageInput = document.getElementById('formMessage');
+
+      const name = nameInput ? nameInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim() : '';
+      const subject = subjectInput ? subjectInput.value.trim() : '';
+      const message = messageInput ? messageInput.value.trim() : '';
+      
       // Simple validation indicator
       let isValid = true;
-      const inputs = contactForm.querySelectorAll('.form-control');
-      
       inputs.forEach(input => {
         if (!input.value.trim()) {
           isValid = false;
           input.style.borderColor = 'rgba(239, 68, 68, 0.5)'; // Red border on empty
         } else {
-          input.style.borderColor = 'var(--border-color)';
+          input.style.borderColor = '';
         }
       });
+
+      // Basic email pattern check
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (email && !emailPattern.test(email)) {
+        isValid = false;
+        if (emailInput) emailInput.style.borderColor = 'rgba(239, 68, 68, 0.5)';
+        showFormAlert('Please enter a valid email address.', 'error');
+        return;
+      }
 
       if (!isValid) {
         showFormAlert('Please fill in all fields.', 'error');
         return;
       }
 
-      // Simulate API submit status
       submitBtn.disabled = true;
       submitBtn.innerHTML = 'Sending...';
 
-      setTimeout(() => {
-        submitBtn.innerHTML = 'Success!';
-        submitBtn.style.background = 'var(--status-completed)';
-        showFormAlert('Message sent successfully! I will get back to you shortly.', 'success');
-        
-        contactForm.reset();
-        
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/sbmalferrari@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            _subject: subject || `Portfolio Message from ${name}`,
+            message: message
+          })
+        });
+
+        const result = await response.json().catch(() => ({}));
+
+        if (response.ok && (result.success === 'true' || result.success === true || result.message)) {
+          submitBtn.innerHTML = 'Success!';
+          submitBtn.style.background = 'var(--status-completed)';
+          showFormAlert('Message sent successfully! I will get back to you shortly.', 'success');
+          contactForm.reset();
+        } else {
+          throw new Error(result.message || 'Submission failed');
+        }
+      } catch (err) {
+        console.warn('Form submission via API failed or blocked, falling back to mail client:', err);
+        // Fallback to mailto so the user can still send the email reliably
+        const mailtoSubject = encodeURIComponent(subject || `Message from ${name}`);
+        const mailtoBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+        window.location.href = `mailto:sbmalferrari@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+        showFormAlert('Opening your email client to send the message...', 'success');
+      } finally {
         setTimeout(() => {
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalBtnText;
-          submitBtn.style.background = 'var(--accent-gradient)';
-        }, 3000);
-      }, 1500);
+          submitBtn.style.background = '';
+        }, 3500);
+      }
     });
   }
 
